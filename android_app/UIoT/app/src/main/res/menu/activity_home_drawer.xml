@@ -19,7 +19,11 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="Tools" /> -->
         <item
-            android:id="@+id/nav_phone"
+            android:id="@+id/nav_register_device"
+            android:icon="@drawable/ic_phone_android_black"
+            android:title="@string/register_device" />
+        <item
+            android:id="@+id/nav_create_iot_network"
             android:icon="@drawable/ic_phone_wifi"
             android:title="@string/create_iot_network" />
     </group>

@@ -6,5 +6,8 @@
     <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
     <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
 
+
+    <!--Strings create by: Alex Alexandre <alex.alexandre@redes.unb.br>-->
     <item name="ic_phone_wifi" type="drawable">@drawable/ic_phone_wifi</item>
+    <item name="ic_phone_android_black" type="drawable">@drawable/ic_phone_android_black</item>
 </resources>

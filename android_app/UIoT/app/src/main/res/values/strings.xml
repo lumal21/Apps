@@ -6,6 +6,13 @@
     <string name="action_settings">Settings</string>
 
     <!--Variables creates by: Alex Alexandre   <alex.alexandre@redes.unb.br>   -->
-    <string name="create_iot_network">Criar rede IoT</string>
 
+        <!--****** menu variables ******-->
+    <string name="register_device">Registrar Dispositivo</string>
+    <string name="create_iot_network">Criar Rede IoT</string>
+
+           <!--****** header variables ******-->
+
+    <string name="name_alex">Alex Alexandre</string>
+    <string name="email_alex">alex.alexandre@redes.unb.br</string>
 </resources>
