@@ -18,7 +18,7 @@ function getClientList() {
              showErrorMessage(data.ErrorResponse);
          }
 
-     }
+     })
      }
 
 
@@ -45,7 +45,7 @@ function getClientListServiceValues() {
              } else {
                  showErrorMessage(data.ErrorResponse);
              }
-         }
+         })
          }
 
 
@@ -71,5 +71,5 @@ function clientRegister() {
                  } else {
                      showErrorMessage(data.ErrorResponse);
                  }
-             }
+             })
      }
