@@ -96,9 +96,10 @@ public class HomeActivity extends AppCompatActivity{
 
                         break;
                     case R.id.nav_create_iot_network:
-                        Toast.makeText(getApplicationContext(), "Create a new IoT network", Toast.LENGTH_SHORT).show();
-                        Intent changeSensors = new Intent(HomeActivity.this, SensorsActivity.class);
-                        startActivity(changeSensors);
+//                        Toast.makeText(getApplicationContext(), "Create a new IoT network", Toast.LENGTH_SHORT).show();
+//                        Intent changeSensors = new Intent(HomeActivity.this, SensorsActivity.class);
+//                        startActivity(changeSensors);
+                        startActivity(new Intent(HomeActivity.this, SensorsActivity.class));
                         break;
                 }
 

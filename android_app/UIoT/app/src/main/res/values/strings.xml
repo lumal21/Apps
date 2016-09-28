@@ -12,7 +12,12 @@
     <string name="create_iot_network">Criar Rede IoT</string>
 
            <!--****** header variables ******-->
-
     <string name="name_alex">Alex Alexandre</string>
     <string name="email_alex">alex.alexandre@redes.unb.br</string>
+
+
+    <string name="qtdSensorsList">Quantidade de Sensores:</string>
+    <string name="switchHbSensor">Habilitar Sensor</string>
+
+
 </resources>
