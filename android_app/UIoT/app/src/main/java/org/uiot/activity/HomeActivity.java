@@ -1,9 +1,6 @@
-package org.uiot.uiot;
+package org.uiot.activity;
 
 import android.content.Intent;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import org.uiot.uiot.R;
 
 public class HomeActivity extends AppCompatActivity{
 //    implements NavigationView.OnNavigationItemSelectedListener
@@ -103,7 +102,6 @@ public class HomeActivity extends AppCompatActivity{
                         break;
                 }
 
-
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
@@ -111,6 +109,5 @@ public class HomeActivity extends AppCompatActivity{
         });
 
     }
-
 
 }
