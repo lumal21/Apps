@@ -100,6 +100,11 @@ public class HomeActivity extends AppCompatActivity{
 //                        startActivity(changeSensors);
                         startActivity(new Intent(HomeActivity.this, SensorsActivity.class));
                         break;
+                    case R.id.nav_transmitter:
+                        Toast.makeText(getApplicationContext(), "Transmisores", Toast.LENGTH_SHORT).show();
+                        Intent changeTransmitter = new Intent(HomeActivity.this, TransmitterActivity.class);
+                        startActivity(changeTransmitter);
+                        break;
                 }
 
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
