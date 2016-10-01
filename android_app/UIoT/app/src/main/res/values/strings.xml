@@ -10,7 +10,7 @@
         <!--****** menu variables ******-->
     <string name="register_device">Registrar Dispositivo</string>
     <string name="create_iot_network">Criar Rede IoT</string>
-
+    <string name="transmitter">Transmissores</string>
            <!--****** header variables ******-->
     <string name="name_alex">Alex Alexandre</string>
     <string name="email_alex">alex.alexandre@redes.unb.br</string>
@@ -19,5 +19,9 @@
     <string name="qtdSensorsList">Quantidade de Sensores:</string>
     <string name="switchHbSensor">Habilitar Sensor</string>
 
+            <!--****** transmisors ******-->
+    <string name="wifi">Wi-Fi</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="nfc">NFC</string>
 
 </resources>
