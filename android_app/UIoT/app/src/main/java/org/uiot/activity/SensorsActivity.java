@@ -1,5 +1,5 @@
 /**
- * Created by Alex Alexandre <alex.alexandre@redes.unb.br>
+ * Created by Alex Alexandre <alex.alexandre@uiot.org>
  * on 17/09/16.
  */
 
@@ -101,7 +101,7 @@ public class SensorsActivity extends Activity{
                 TransformDataExporte dadoPronto = new TransformDataExporte(selectedSensorsList);
 
 
-                b.putSerializable("LISTA", (Serializable) dadoPronto.getList());
+                b.putSerializable("SENSORSLIST", (Serializable) dadoPronto.getList());
                 iSensor.putExtras(b);
 
                 startService(iSensor);

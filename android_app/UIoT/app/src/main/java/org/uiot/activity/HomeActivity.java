@@ -1,3 +1,8 @@
+/**
+ * Created by Alex Alexandre <alex.alexandre@uiot.org>
+ * on 10/09/16.
+ */
+
 package org.uiot.activity;
 
 import android.content.Intent;

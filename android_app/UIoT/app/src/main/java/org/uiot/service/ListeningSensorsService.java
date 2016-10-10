@@ -1,5 +1,6 @@
 /**
- * Created by Alex Alexandre <alex.alexandre@redes.unb.br> on 28/09/16.
+ * Created by Alex Alexandre <alex.alexandre@uiot.ogr>
+ * on 28/09/16.
  */
 
 package org.uiot.service;
@@ -51,21 +52,45 @@ public class ListeningSensorsService extends Service implements SensorEventListe
         orientation = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
         proximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
-        mSensorManager.registerListener(this, accelerometer , SensorManager.SENSOR_DELAY_NORMAL);
-//        mSensorManager.registerListener(this, gravity, SensorManager.SENSOR_DELAY_NORMAL);
-
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Bundle i = intent.getExtras();
-        List<String> listasss = (List<String>) i.getSerializable("LISTA");
-
-
-        Toast.makeText(getApplicationContext(), ""+listasss, Toast.LENGTH_SHORT).show();
+        List<String> selectedSensorList = (List<String>) i.getSerializable("SENSORSLIST");
+        readList(selectedSensorList);
 
         return super.onStartCommand(intent, flags, startId);
+    }
+
+    /**
+     *  This method read the list with  sensors selected by the user
+     */
+    public void readList(List<String> sensorsList){
+        for(int i = 0; i < sensorsList.size(); i++){
+            activeSensorChoosed(sensorsList.get(i));
+        }
+    }
+
+    /**
+     *  This method enables the sensors selected by the user
+     */
+    public void activeSensorChoosed(String nameSensor){
+        switch (nameSensor){
+            case "PSH Accelerometer":
+                mSensorManager.registerListener(this, accelerometer , SensorManager.SENSOR_DELAY_NORMAL);
+                break;
+            case "PSH Gravity sensor":
+                mSensorManager.registerListener(this, gravity, SensorManager.SENSOR_DELAY_NORMAL);
+                break;
+            case "PSH Gyroscope sensor":
+                mSensorManager.registerListener(this, gyroscope, SensorManager.SENSOR_DELAY_NORMAL);
+                break;
+            case "PSH Linear Acceleration sensor":
+                mSensorManager.registerListener(this, linearAcceleration, SensorManager.SENSOR_DELAY_NORMAL);
+                break;
+        }
     }
 
     @Override
@@ -123,6 +148,8 @@ public class ListeningSensorsService extends Service implements SensorEventListe
     }
 
 
+
+
     // ************************** Methods that recover the sensors value **********************************
 
     public void accelerometerValue(SensorEvent event){
@@ -133,13 +160,29 @@ public class ListeningSensorsService extends Service implements SensorEventListe
         Toast.makeText(getApplicationContext(), "Acelerometro \n" + "X: " + x + "\n" + "Y: " + y + "\n" + "Z: " + z, Toast.LENGTH_SHORT).show();
     }
     public void gravityValue(SensorEvent event){
+        final float alpha = (float) 0.8;
+        float[] gravity = new float[3];
 
+        gravity[0] = alpha * gravity[0] + (1 - alpha) * event.values[0];
+        gravity[1] = alpha * gravity[1] + (1 - alpha) * event.values[1];
+        gravity[2] = alpha * gravity[2] + (1 - alpha) * event.values[2];
+
+        Toast.makeText(getApplicationContext(), "GRAVIDADE \n" + "X: " + gravity[0] + "\n" + "Y: " + gravity[1] + "\n" + "Z: " + gravity[2], Toast.LENGTH_SHORT).show();
     }
     public void gyroscopeValue(SensorEvent event){
+        float x = event.values[0];
+        float y = event.values[0];
+        float z = event.values[0];
+
+        Toast.makeText(getApplicationContext(), "Giroscopio \n" + "X: " + x + "\n" + "Y: " + y + "\n" + "Z: " + z, Toast.LENGTH_SHORT).show();
 
     }
     public void linearAccelerationValue(SensorEvent event){
+        float x = event.values[0];
+        float y = event.values[0];
+        float z = event.values[0];
 
+        Toast.makeText(getApplicationContext(), "Aceleração LINEAR\n" + "X: " + x + "\n" + "Y: " + y + "\n" + "Z: " + z, Toast.LENGTH_SHORT).show();
     }
     public void magneticFieldValue(SensorEvent event){
 
@@ -148,14 +191,6 @@ public class ListeningSensorsService extends Service implements SensorEventListe
 
     }
     public void proximityValue(SensorEvent event){
-
-    }
-
-    /**
-     *  This method enables the sensors selected by the user
-     */
-    public void callRightSensors(Sensor sensor, SensorEvent event){
-
 
     }
 
