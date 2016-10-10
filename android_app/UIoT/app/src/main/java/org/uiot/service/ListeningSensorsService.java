@@ -21,7 +21,7 @@ import java.util.List;
 
 public class ListeningSensorsService extends Service implements SensorEventListener{
 
-    private SensorManager mSensorManager;
+    private SensorManager sensorManager;
 
     // Motion Sensors
     private Sensor accelerometer;
@@ -42,15 +42,15 @@ public class ListeningSensorsService extends Service implements SensorEventListe
     @Override
     public void onCreate() {
         super.onCreate();
-        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
-        accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        gravity = mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
-        gyroscope = mSensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-        linearAcceleration = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
-        magneticField = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
-        orientation = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
-        proximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        gravity = sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
+        gyroscope = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+        linearAcceleration = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+        magneticField = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        orientation = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+        proximity = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
     }
 
@@ -79,16 +79,16 @@ public class ListeningSensorsService extends Service implements SensorEventListe
     public void activeSensorChoosed(String nameSensor){
         switch (nameSensor){
             case "PSH Accelerometer":
-                mSensorManager.registerListener(this, accelerometer , SensorManager.SENSOR_DELAY_NORMAL);
+                sensorManager.registerListener(this, accelerometer , SensorManager.SENSOR_DELAY_NORMAL);
                 break;
             case "PSH Gravity sensor":
-                mSensorManager.registerListener(this, gravity, SensorManager.SENSOR_DELAY_NORMAL);
+                sensorManager.registerListener(this, gravity, SensorManager.SENSOR_DELAY_NORMAL);
                 break;
             case "PSH Gyroscope sensor":
-                mSensorManager.registerListener(this, gyroscope, SensorManager.SENSOR_DELAY_NORMAL);
+                sensorManager.registerListener(this, gyroscope, SensorManager.SENSOR_DELAY_NORMAL);
                 break;
             case "PSH Linear Acceleration sensor":
-                mSensorManager.registerListener(this, linearAcceleration, SensorManager.SENSOR_DELAY_NORMAL);
+                sensorManager.registerListener(this, linearAcceleration, SensorManager.SENSOR_DELAY_NORMAL);
                 break;
         }
     }
@@ -144,7 +144,7 @@ public class ListeningSensorsService extends Service implements SensorEventListe
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mSensorManager.unregisterListener(this);
+        sensorManager.unregisterListener(this);
     }
 
 

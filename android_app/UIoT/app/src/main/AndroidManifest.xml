@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.uiot.uiot">
 
+
+    <!--PERMIÇÃO PARA ACESSAR A INTERNET E RECUPERA IP/MAC-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <!-- PERMIÇÃO PARA USAR BLUETOOTH -->
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
@@ -12,9 +17,6 @@
 
     <!-- PERMIÇÃO PARA USAR NFC -->
     <uses-permission android:name="android.permission.NFC"/>
-
-        <!--PERMIÇÃO PARA ACESSAR A INTERNET-->
-    <uses-permission android:name="android.permission.INTERNET"/>
 
     <uses-feature
         android:name="android.hardware.nfc"
@@ -41,7 +43,10 @@
             android:name="org.uiot.activity.SensorsActivity"
             android:label="Lista de Sensores">
         </activity>
-
+        <activity
+            android:name="org.uiot.activity.DeviceActivity"
+            android:label="Registrar Device">
+        </activity>
         <activity
             android:name="org.uiot.activity.TransmitterActivity"
             android:label="Lista de Transmisores">
@@ -51,11 +56,9 @@
             android:theme="@android:style/Theme.Dialog"
             android:label="Lista de Dispositivos Bluettooth" >
         </activity>
-
         <service
             android:name="org.uiot.service.ListeningSensorsService">
         </service>
-
     </application>
 
 </manifest>

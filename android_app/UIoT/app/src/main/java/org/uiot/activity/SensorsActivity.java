@@ -75,8 +75,12 @@ public class SensorsActivity extends Activity{
     }
 
 
+    /**
+     * This method create the button to select the sensors,
+     * and capture the selected sensors to send the sensors list service
+     */
     private void selectSensors(){
-        Button enableSensors = (Button) findViewById(R.id.idHabilitarSensorbtn);
+        Button enableSensors = (Button) findViewById(R.id.idBtnHabilitarSensor);
         enableSensors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

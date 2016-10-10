@@ -17,10 +17,15 @@
     <string name="email_alex">alex.alexandre@redes.unb.br</string>
 
 
-    <string name="qtdSensorsList">Quantidade de Sensores:</string>
-    <string name="switchHbSensor">Habilitar Sensor</string>
+      <!--**************** register device ***********-->
+    <string name="choose_name_device">Escolha um nome para seu dispositivo:</string>
+    <string name="qtd_sensors_list">Quantidade de Sensores:</string>
+    <string name="switchHb_sensor">Habilitar Sensor</string>
+    <string name="btn_next">Próximo Passo</string>
+    <string name="ip_error_dialog_title">Atenção, IP não encontrado!</string>
+    <string name="ip_error_dialog_message">Não conseguimos identificar seu IP, deseja digitar manualmente ?</string>
 
-            <!--****** transmisors ******-->
+    <!--****** transmisors ******-->
     <string name="wifi">Wi-Fi</string>
     <string name="bluetooth">Bluetooth</string>
     <string name="nfc">NFC</string>
