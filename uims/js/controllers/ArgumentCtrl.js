@@ -5,7 +5,7 @@
  */
  app.controller('ArgumentCtrl', function ($rootScope, $scope, Request, $http){
  	
- 	$http.get('server-side/argumentRequest.php')
+ 	$http.get('requests/argumentRequest.php')
  	.success(function(argument_return){
  		$scope.qtdArguments = argument_return.length;
  		$scope.argument_table = argument_return;

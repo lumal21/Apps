@@ -5,7 +5,7 @@
  */
  app.controller("DeviceCtrl", function ($rootScope, $scope, Request, $http) {
  
-  	$http.get('server-side/deviceRequest.php').success(function(devices_return){
+  	$http.get('requests/deviceRequest.php').success(function(devices_return){
   			
 $scope.qtdDevices = devices_return.length;
 $scope.device_table = devices_return;

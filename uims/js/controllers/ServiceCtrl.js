@@ -5,7 +5,7 @@
  */
  app.controller('ServiceCtrl', function ($rootScope, $scope, Request, $http){
 
- 	$http.get('server-side/serviceRequest.php')
+ 	$http.get('requests/serviceRequest.php')
  	.success(function(service_return){
  		$scope.qtdServices = service_return.length;
  		$scope.service_table = service_return;
