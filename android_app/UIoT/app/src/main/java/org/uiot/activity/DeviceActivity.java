@@ -17,7 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONObject;
 import org.uiot.uiot.R;
+import org.uiot.utils.HttpUtils;
+
+import java.io.IOException;
+import java.util.HashMap;
 
 
 public class DeviceActivity extends Activity {
@@ -26,7 +31,9 @@ public class DeviceActivity extends Activity {
     private WifiManager wifiManager;
     private static String ipAddress = "";
     private static String macpAddress = "";
-
+    private HashMap<String, String> data;
+    private String url = "http://raise.uiot.org/devices";
+    private String method = "POST";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +61,23 @@ public class DeviceActivity extends Activity {
 
 //                Toast.makeText(getApplicationContext(), ipAddress, Toast.LENGTH_SHORT).show();
 //                Toast.makeText(getApplicationContext(), macpAddress, Toast.LENGTH_SHORT).show();
+
+
+
+                //Estou presisando saber como passar as request
+
+//                data = new HashMap<String, String>();
+//                data.put("name", deviceName.toString());
+//                data.put("chipset_id", ipAddress);
+//                data.put("mac", macpAddress);
+//
+//                try {
+//                    String retorno= HttpUtils.makeRequest(url,method,data);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+
+
 
                 startActivity(new Intent(DeviceActivity.this, SensorsActivity.class));
             }

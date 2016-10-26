@@ -65,7 +65,7 @@ public class SensorsActivity extends Activity{
      * This method is called by the showList method to build a list with all the sensors enable in the device
      */
     private List<String> builderSensorNameList(List<Sensor> sensorsList){
-        List<String> sensorsName = new ArrayList<String>();
+        List<String> sensorsName = new ArrayList<>();
 
         for(int i = 0; i < sensorsList.size(); i++){
             String name = sensorsList.get(i).getName();
@@ -110,6 +110,7 @@ public class SensorsActivity extends Activity{
 
                 startService(iSensor);
                 //startService(new Intent(SensorsActivity.this, ListeningSensorsService.class));
+                startActivity(new Intent(SensorsActivity.this, TransmitterActivity.class));
 
             }
         });

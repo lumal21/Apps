@@ -52,6 +52,10 @@
             android:label="Lista de Transmisores">
         </activity>
         <activity
+            android:name="org.uiot.activity.TransmitterVersionActivity"
+            android:label="Lista de Transmisores">
+        </activity>
+        <activity
             android:name="org.uiot.activity.ListBluetoothActivity"
             android:theme="@android:style/Theme.Dialog"
             android:label="Lista de Dispositivos Bluettooth" >

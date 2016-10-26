@@ -106,6 +106,7 @@ public class HomeActivity extends AppCompatActivity{
                         Intent changeTransmitter = new Intent(HomeActivity.this, TransmitterActivity.class);
                         startActivity(changeTransmitter);
                         break;
+
                 }
 
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

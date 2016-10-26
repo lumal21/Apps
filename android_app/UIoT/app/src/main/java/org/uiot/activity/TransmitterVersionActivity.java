@@ -1,6 +1,5 @@
 package org.uiot.activity;
 
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -30,12 +29,11 @@ import java.util.List;
 import java.util.UUID;
 
 import static android.nfc.NfcAdapter.getDefaultAdapter;
-
 /**
- * Created by Ruan Aragão on 30/09/2016.
+ * Created by Ruan Aragão on 26/10/2016.
  */
 
-public class TransmitterActivity extends Activity {
+public class TransmitterVersionActivity extends Activity {
     private ListView transmitterListView;
     ArrayAdapter arrayAdapter;
 
@@ -49,7 +47,7 @@ public class TransmitterActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.transmitter);
+        setContentView(R.layout.transmitter_version);
 
         open();
     }
@@ -115,7 +113,7 @@ public class TransmitterActivity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        final ProgressDialog dialog1 = new ProgressDialog(TransmitterActivity.this);
+                        final ProgressDialog dialog1 = new ProgressDialog(TransmitterVersionActivity.this);
 
                         dialog1.setMessage("Conectando com WiFi");
                         dialog1.setIndeterminate(false);
@@ -162,7 +160,7 @@ public class TransmitterActivity extends Activity {
             @Override
             public void onClick(View v) {
                 StringBuffer responseText = new StringBuffer();
-                responseText.append("Os sensores selecionados foram...\n");
+                responseText.append("Os transmissores selecionados foram...\n");
                 List<String> selectedSensorsList = new ArrayList<>();
                 int count = 0;
 

@@ -11,6 +11,7 @@
     <string name="register_device">Registrar Dispositivo</string>
     <string name="create_iot_network">Criar Rede IoT</string>
     <string name="transmitter">Transmissores</string>
+    <string name="qtdTransmitterrsList">Quantidade Transmisores</string>
 
            <!--****** header variables ******-->
     <string name="name_alex">Alex Alexandre</string>
