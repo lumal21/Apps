@@ -1,0 +1,76 @@
+<div>
+
+	<!-- Page Heading -->
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">
+				<i class="glyphicon glyphicon-phone fa-2x"></i> Serviços
+			</h1>
+			<ol class="breadcrumb">
+				<li class="active">
+					<i class="glyphicon glyphicon-phone"></i> Abaixo estão as informações completas sobre os serviços cadastrados no RAISe.
+				</li>
+			</ol>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<div class="col-lg-6 col-md-4">
+		<div class="input-group">
+			<input type="text" ng-model="findService" class="form-control" placeholder="Procurar..." aria-describedby="sizing-addon1">
+			<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+		</div>
+		</div>
+		<div class="col-lg-6 col-md-4">
+			<button class="btn btn-success  pull-right" ng-click="exportServiceData()">
+				<i class="fa fa-file-excel-o" aria-hidden="true"></i> Exportar planilha Excel
+			</button>
+		</div>
+	</div>
+	<br>
+
+	<div class="row">
+		
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="glyphicon glyphicon-phone fa-fw"></i> - Serviços Registrados</h3>
+				</div>
+				<div class="panel-body">
+					<div id="service-table" class="table-responsive">
+						<table class="table table-bordered table-hover table-striped">
+							<thead>
+								<tr>
+									<th>Ordem</th>
+									<th>ID</th>
+									<th>Nome</th>
+									<th>Descrição</th>
+									<th>Tipo</th>
+									<th>Scpdurl</th>
+									<th>Control_url</th>
+									<th>Event_sud_url</th>
+									<th>Tempo de Atualização</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="s in service_table | filter: findService">
+									<td>{{$index + 1}}</td>
+									<td>{{s.id}}</td>
+									<td>{{s.name}}</td>
+									<td>{{s.description}}</td>
+									<td>{{s.type}}</td>
+									<td>{{s.scpdurl}}</td>
+									<td>{{s.control_url}}</td>
+									<td>{{s.event_sud_url}}</td>
+									<td>{{s.refresh_rate}} segundos</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,172 @@
+<div class="alert alert-danger alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>Atenção!</strong>  Lembramos que esta é uma versão instável e pode apresentar erros <i class="fa fa-bug"></i>. Caso tenha algum problema, por favor entrar em  contato pelo <br>e-mail:  <u>alex.alexandre@redes.unb.br</u> .
+</div>
+<div>
+
+	<!-- Page Heading -->
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">
+				Seja bem-vindo 	
+			</h1>
+			<ol class="breadcrumb">
+				<li class="active">
+					<i class="fa fa-dashboard"></i> Dashboard - Abaixo estão os princípais detalhes.
+				</li>
+			</ol>
+		</div>
+	</div>
+
+
+
+	<div class="row">
+
+		<!-- DEVICES DASHBOARD -->
+		<div class="col-lg-4 col-md-6" ng-controller="DeviceCtrl">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-fw fa-desktop fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">{{qtdDevices}}</div>
+							<div><h4>Dispositivos Registrados</h4></div>
+						</div>
+					</div>
+				</div>
+				<a href="#devices">
+					<div class="panel-footer">
+						<span class="pull-left">Ver Detalhes</span>
+						<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- SERVICES DASHBOARD -->
+		<div class="col-lg-4 col-md-6" ng-controller="ServiceCtrl">
+			<div class="panel panel-green">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="glyphicon glyphicon-phone fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">{{qtdServices}}</div>
+							<div><h4>Serviços Registrados</h4></div>
+						</div>
+					</div>
+				</div>
+				<a href="#services">
+					<div class="panel-footer">
+						<span class="pull-left">Ver Detalhes</span>
+						<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- ARGUMENTS DASHBOARD -->
+		<div class="col-lg-4 col-md-6" ng-controller="ArgumentCtrl">
+			<div class="panel panel-red">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="glyphicon glyphicon-inbox fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">{{qtdArguments}}</div>
+							<div><h4>Argumentos Registrados</h4></div>
+						</div>
+					</div>
+				</div>
+				<a href="#arguments">
+					<div class="panel-footer">
+						<span class="pull-left">Ver Detalhes</span>
+						<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- /.row -->
+
+	<br><hr>
+
+
+	<div class="row">
+		
+		<div class="col-lg-6" ng-controller="DeviceCtrl">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Ultimos Dispositivos Registrados</h3>
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover table-striped">
+							<thead>
+								<tr>
+									<th>Ordem</th>
+									<th>ID</th>
+									<th>Nome</th>
+									<th>MAC</th>
+									<th>Serial</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="d in device_table | limitTo: -10">
+									<td>{{$index + 1}}</td>
+									<td>{{d.id}}</td>
+									<td>{{d.name}}</td>
+									<td>{{d.mac}}</td>
+									<td>{{d.serial}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-lg-6" ng-controller="ServiceCtrl">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Ultimos Serviços Registrados</h3>
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover table-striped">
+							<thead>
+								<tr>
+									<th>Ordem</th>
+									<th>ID</th>
+									<th>Nome</th>
+									<th>Tipo</th>
+									<th>Tempo de Atualização</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="s in service_table | limitTo: -10">
+									<td>{{$index + 1}}</td>
+									<td>{{s.id}}</td>
+									<td>{{s.name}}</td>
+									<td>{{s.type}}</td>
+									<td>{{s.refresh_rate}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- row's end -->
+	</div>
+
+</div>
