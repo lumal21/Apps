@@ -5,16 +5,12 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.nfc.NfcAdapter;
-import android.nfc.NfcManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,12 +20,8 @@ import android.widget.Toast;
 
 import org.uiot.uiot.R;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-
-import static android.nfc.NfcAdapter.getDefaultAdapter;
 
 /**
  * Created by Ruan Aragão on 30/09/2016.
@@ -105,13 +97,13 @@ public class TransmitterActivity extends Activity {
 
     private void AlertDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Atenção");
-        builder.setMessage("Porfavor verifique se voce tem acesso a internet");
+        builder.setTitle(R.string.msg_attention);
+        builder.setMessage(R.string.msg_check_internet);
 
         //SET POSITIVE
         connectivityManager = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
         wifiManager = (WifiManager)this.getSystemService(Context.WIFI_SERVICE);
-        builder.setPositiveButton("Conectar WI-FI", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.btn_turn_on_wifi, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
@@ -135,7 +127,7 @@ public class TransmitterActivity extends Activity {
         );
 
         //SET NEGATIVE
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
+        builder.setNegativeButton(R.string.btn_cancel, new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 open();

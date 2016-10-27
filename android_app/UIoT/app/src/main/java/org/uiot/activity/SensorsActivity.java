@@ -102,7 +102,7 @@ public class SensorsActivity extends Activity{
 
                 Intent iSensor = new Intent(SensorsActivity.this, ListeningSensorsService.class);
                 Bundle b = new Bundle();
-                TransformDataExporte dadoPronto = new TransformDataExporte(selectedSensorsList);
+                TransformDataExport dadoPronto = new TransformDataExport(selectedSensorsList);
 
 
                 b.putSerializable("SENSORSLIST", (Serializable) dadoPronto.getList());
@@ -121,10 +121,10 @@ public class SensorsActivity extends Activity{
      * This method turns the sensors list selected by the user
      * in a serializable data to send to the listening sensors service
      */
-    public class TransformDataExporte implements Serializable {
+    public class TransformDataExport implements Serializable {
         private List<String> sensorsSerial;
 
-        public TransformDataExporte(List<String> sensorsSerial) {
+        public TransformDataExport(List<String> sensorsSerial) {
             this.sensorsSerial = sensorsSerial;
         }
 

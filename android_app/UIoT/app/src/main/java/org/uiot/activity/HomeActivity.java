@@ -93,7 +93,6 @@ public class HomeActivity extends AppCompatActivity{
                 // Handle navigation view item clicks here.
                 int id = item.getItemId();
 
-
                 switch (id){
                     case R.id.nav_register_device:
                         startActivity(new Intent(HomeActivity.this, DeviceActivity.class));

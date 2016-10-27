@@ -45,8 +45,8 @@ public class DeviceActivity extends Activity {
     }
 
     /**
-     * This's the most important method on this class he call the ip/mac method,
-     * to verify the ip. And will create the intents to call a auto-register device service
+     * This's the most important method on this class, he call the ip/mac method,
+     * to verify the ip. And will create the intents to call a self-register device service
      * and the sensors activity
      */
     private void buttonDevice(){
@@ -116,11 +116,11 @@ public class DeviceActivity extends Activity {
     private void builderIpDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.ip_error_dialog_message)
-                .setTitle(R.string.ip_error_dialog_title);
+                .setTitle(R.string.msg_attention);
 
         final EditText input = new EditText(this);
         builder.setView(input);
-        builder.setPositiveButton("Continuar",new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.btn_continue,new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int which) {
 
@@ -130,9 +130,9 @@ public class DeviceActivity extends Activity {
 
         });
 
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener(){
+        builder.setNegativeButton(R.string.btn_cancel, new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int id) {
-                Toast.makeText(getApplicationContext(), "Canceloooou",
+                Toast.makeText(getApplicationContext(), R.string.msg_cancel,
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -140,14 +140,4 @@ public class DeviceActivity extends Activity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
-
-
-
-    /**
-     * Nexts steps
-     * 1 - create a button - ok
-     * 2 - create a intent to a service
-     * 3 - create a intenet to the list sensor activity
-     */
-
 }

@@ -1,21 +1,18 @@
 <resources>
     <string name="app_name">UIoT</string>
 
+    <!--****** menu and header variables ******-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
-
-    <!--Variables creates by: Alex Alexandre   <alex.alexandre@redes.unb.br>   -->
-
-        <!--****** menu variables ******-->
     <string name="register_device">Registrar Dispositivo</string>
     <string name="create_iot_network">Criar Rede IoT</string>
     <string name="transmitter">Transmissores</string>
     <string name="qtdTransmitterrsList">Quantidade Transmisores</string>
-
-           <!--****** header variables ******-->
     <string name="name_alex">Alex Alexandre</string>
     <string name="email_alex">alex.alexandre@redes.unb.br</string>
+
+
 
 
       <!--**************** register device ***********-->
@@ -23,11 +20,22 @@
     <string name="qtd_sensors_list">Quantidade de Sensores:</string>
     <string name="switchHb_sensor">Habilitar Sensor</string>
     <string name="btn_next">Próximo Passo</string>
-    <string name="ip_error_dialog_title">Atenção, IP não encontrado!</string>
     <string name="ip_error_dialog_message">Não conseguimos identificar seu IP, deseja digitar manualmente ?</string>
 
     <!--****** transmisors ******-->
     <string name="wifi">Wi-Fi</string>
     <string name="bluetooth">Bluetooth</string>
     <string name="nfc">NFC</string>
+
+    <!--buttons-->
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_continue">Continuar</string>
+    <string name="btn_turn_on_wifi">Conectar ao Wi-Fi</string>
+
+
+    <!--messages and alerts-->
+    <string name="msg_cancel">Ação Cancelada!</string>
+    <string name="msg_attention">Atenção!</string>
+    <string name="msg_check_internet">Por favor verifique sua conexão com a internet</string>
+    <string name="msg_wifi_on">Conectado ao Wi-Fi</string>
 </resources>
