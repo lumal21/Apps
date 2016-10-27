@@ -3,9 +3,9 @@
  * <alex.alexandre@redes.unb.br> 
  * on 22/10/16.
  */
- app.controller('ArgumentCtrl', function ($rootScope, $scope, Request, $http){
+ app.controller('ArgumentCtrl', function ($scope, Request){
  	
- 	$http.get('requests/argumentRequest.php')
+ 	Request.getArguments()
  	.success(function(argument_return){
  		$scope.qtdArguments = argument_return.length;
  		$scope.argument_table = argument_return;

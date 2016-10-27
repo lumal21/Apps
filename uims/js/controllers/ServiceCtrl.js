@@ -3,9 +3,9 @@
  * <alex.alexandre@redes.unb.br> 
  * on 22/10/16.
  */
- app.controller('ServiceCtrl', function ($rootScope, $scope, Request, $http){
+ app.controller('ServiceCtrl', function ($scope, Request){
 
- 	$http.get('requests/serviceRequest.php')
+ 	Request.getServices()
  	.success(function(service_return){
  		$scope.qtdServices = service_return.length;
  		$scope.service_table = service_return;

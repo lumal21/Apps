@@ -3,16 +3,17 @@
  * <alex.alexandre@redes.unb.br> 
  * on 22/10/16.
  */
- app.controller("DeviceCtrl", function ($rootScope, $scope, Request, $http) {
+ app.controller("DeviceCtrl", function ($scope, Request) {
  
-  	$http.get('requests/deviceRequest.php').success(function(devices_return){
-  			
-$scope.qtdDevices = devices_return.length;
-$scope.device_table = devices_return;
+  	
+    Request.getDevices()
+    .success(function(devices_return){		
+        $scope.qtdDevices = devices_return.length;
+        $scope.device_table = devices_return;
   		
   	}).error(function(data){
-  		console.log('DEU ERRO ');
-  		console.log(data);
+  		  console.log('DEU ERRO na conexão com o device');
+  		  console.log(data);
   	});
 
 

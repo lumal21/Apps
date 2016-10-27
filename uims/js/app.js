@@ -7,8 +7,7 @@
  app.config(function ($routeProvider, $httpProvider) {
     $routeProvider
     .when('/', {
-        templateUrl: 'templates/dashboard.html',
-        controller:  'SelfRegisterCtrl'
+        templateUrl: 'templates/dashboard.html'
     })
     .when('/devices', {
         templateUrl: 'templates/devices.html',
