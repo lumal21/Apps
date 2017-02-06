@@ -1,6 +1,6 @@
 <h1>![](http://i.imgur.com/TaFqVtT.png)<sup><sup>application layer</sup></sup><sub><sub><sup></h1></sup></sub></sub>
 <br>
-<a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a> [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+<a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a> [![License: CC BY-NC-SA 4.0](http://i.imgur.com/r6ySapi.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 <b>UIoT Application Layer</b></i><br>
 UIoT Application Layer is the Software Layer that will handle all possible Applications. This Repository is made for uploading Application Layer PreBuiltIn Use Cases.
