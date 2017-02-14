@@ -1,0 +1,730 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5921721394442C15F68B0FFD /* Pods_UIoT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06ADFAC46C464756DE30B67 /* Pods_UIoT_iOS.framework */; };
+		832B0B257CA54F9DA518D4F4 /* Pods_UIoT_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01686E57AABEA0F384927B9C /* Pods_UIoT_iOSTests.framework */; };
+		86011C561E53780200184772 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86011C551E53780200184772 /* AppDelegate.swift */; };
+		86011C581E53780200184772 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86011C571E53780200184772 /* ViewController.swift */; };
+		86011C5B1E53780200184772 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86011C591E53780200184772 /* Main.storyboard */; };
+		86011C5D1E53780200184772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86011C5C1E53780200184772 /* Assets.xcassets */; };
+		86011C601E53780200184772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86011C5E1E53780200184772 /* LaunchScreen.storyboard */; };
+		86011C6B1E53780200184772 /* UIoT_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86011C6A1E53780200184772 /* UIoT_iOSTests.swift */; };
+		86011C761E53780200184772 /* UIoT_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86011C751E53780200184772 /* UIoT_iOSUITests.swift */; };
+		DA7EDA8F0271750B179A0B93 /* Pods_UIoT_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7479E3A4EC27920DD71E5A16 /* Pods_UIoT_iOSUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86011C671E53780200184772 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86011C4A1E53780100184772 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86011C511E53780200184772;
+			remoteInfo = "UIoT-iOS";
+		};
+		86011C721E53780200184772 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86011C4A1E53780100184772 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86011C511E53780200184772;
+			remoteInfo = "UIoT-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01686E57AABEA0F384927B9C /* Pods_UIoT_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIoT_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4386E20A75E638BB9FC7A425 /* Pods-UIoT-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOSUITests/Pods-UIoT-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		73D318CB26C0AF074981FD31 /* Pods-UIoT-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOSTests/Pods-UIoT-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7479E3A4EC27920DD71E5A16 /* Pods_UIoT_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIoT_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8001AA03797ABFFB94FC3CD9 /* Pods-UIoT-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOSUITests/Pods-UIoT-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		86011C521E53780200184772 /* UIoT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIoT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86011C551E53780200184772 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		86011C571E53780200184772 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		86011C5A1E53780200184772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		86011C5C1E53780200184772 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86011C5F1E53780200184772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		86011C611E53780200184772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86011C661E53780200184772 /* UIoT-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIoT-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86011C6A1E53780200184772 /* UIoT_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIoT_iOSTests.swift; sourceTree = "<group>"; };
+		86011C6C1E53780200184772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86011C711E53780200184772 /* UIoT-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIoT-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86011C751E53780200184772 /* UIoT_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIoT_iOSUITests.swift; sourceTree = "<group>"; };
+		86011C771E53780200184772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4E3478E2D51652129CF3056 /* Pods-UIoT-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOSTests/Pods-UIoT-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E53B94F55C32878A45977694 /* Pods-UIoT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOS/Pods-UIoT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ECF6BA40A09F91DF4A607511 /* Pods-UIoT-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOS/Pods-UIoT-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		F06ADFAC46C464756DE30B67 /* Pods_UIoT_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIoT_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86011C4F1E53780200184772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5921721394442C15F68B0FFD /* Pods_UIoT_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86011C631E53780200184772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				832B0B257CA54F9DA518D4F4 /* Pods_UIoT_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86011C6E1E53780200184772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA7EDA8F0271750B179A0B93 /* Pods_UIoT_iOSUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		052F30861380BA38085801E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F06ADFAC46C464756DE30B67 /* Pods_UIoT_iOS.framework */,
+				01686E57AABEA0F384927B9C /* Pods_UIoT_iOSTests.framework */,
+				7479E3A4EC27920DD71E5A16 /* Pods_UIoT_iOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86011C491E53780100184772 = {
+			isa = PBXGroup;
+			children = (
+				86011C541E53780200184772 /* UIoT-iOS */,
+				86011C691E53780200184772 /* UIoT-iOSTests */,
+				86011C741E53780200184772 /* UIoT-iOSUITests */,
+				86011C531E53780200184772 /* Products */,
+				FDD692EFEDA54938FE2B0BA5 /* Pods */,
+				052F30861380BA38085801E6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		86011C531E53780200184772 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86011C521E53780200184772 /* UIoT-iOS.app */,
+				86011C661E53780200184772 /* UIoT-iOSTests.xctest */,
+				86011C711E53780200184772 /* UIoT-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86011C541E53780200184772 /* UIoT-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				86011C551E53780200184772 /* AppDelegate.swift */,
+				86011C571E53780200184772 /* ViewController.swift */,
+				86011C591E53780200184772 /* Main.storyboard */,
+				86011C5C1E53780200184772 /* Assets.xcassets */,
+				86011C5E1E53780200184772 /* LaunchScreen.storyboard */,
+				86011C611E53780200184772 /* Info.plist */,
+			);
+			path = "UIoT-iOS";
+			sourceTree = "<group>";
+		};
+		86011C691E53780200184772 /* UIoT-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				86011C6A1E53780200184772 /* UIoT_iOSTests.swift */,
+				86011C6C1E53780200184772 /* Info.plist */,
+			);
+			path = "UIoT-iOSTests";
+			sourceTree = "<group>";
+		};
+		86011C741E53780200184772 /* UIoT-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				86011C751E53780200184772 /* UIoT_iOSUITests.swift */,
+				86011C771E53780200184772 /* Info.plist */,
+			);
+			path = "UIoT-iOSUITests";
+			sourceTree = "<group>";
+		};
+		FDD692EFEDA54938FE2B0BA5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E53B94F55C32878A45977694 /* Pods-UIoT-iOS.debug.xcconfig */,
+				ECF6BA40A09F91DF4A607511 /* Pods-UIoT-iOS.release.xcconfig */,
+				E4E3478E2D51652129CF3056 /* Pods-UIoT-iOSTests.debug.xcconfig */,
+				73D318CB26C0AF074981FD31 /* Pods-UIoT-iOSTests.release.xcconfig */,
+				4386E20A75E638BB9FC7A425 /* Pods-UIoT-iOSUITests.debug.xcconfig */,
+				8001AA03797ABFFB94FC3CD9 /* Pods-UIoT-iOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86011C511E53780200184772 /* UIoT-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86011C7A1E53780200184772 /* Build configuration list for PBXNativeTarget "UIoT-iOS" */;
+			buildPhases = (
+				358B914FDCECD620DB5A26D8 /* [CP] Check Pods Manifest.lock */,
+				86011C4E1E53780200184772 /* Sources */,
+				86011C4F1E53780200184772 /* Frameworks */,
+				86011C501E53780200184772 /* Resources */,
+				E5498F001A190DA4468EE341 /* [CP] Embed Pods Frameworks */,
+				6CCF635997A1DBE24B5E1D53 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIoT-iOS";
+			productName = "UIoT-iOS";
+			productReference = 86011C521E53780200184772 /* UIoT-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		86011C651E53780200184772 /* UIoT-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86011C7D1E53780200184772 /* Build configuration list for PBXNativeTarget "UIoT-iOSTests" */;
+			buildPhases = (
+				C87B110069C9CDF75C2F89C7 /* [CP] Check Pods Manifest.lock */,
+				86011C621E53780200184772 /* Sources */,
+				86011C631E53780200184772 /* Frameworks */,
+				86011C641E53780200184772 /* Resources */,
+				8A1658A95684856AF49FF4A4 /* [CP] Embed Pods Frameworks */,
+				6F609CE8B117DDACCBD20504 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86011C681E53780200184772 /* PBXTargetDependency */,
+			);
+			name = "UIoT-iOSTests";
+			productName = "UIoT-iOSTests";
+			productReference = 86011C661E53780200184772 /* UIoT-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		86011C701E53780200184772 /* UIoT-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86011C801E53780200184772 /* Build configuration list for PBXNativeTarget "UIoT-iOSUITests" */;
+			buildPhases = (
+				D43595907459C035E6758554 /* [CP] Check Pods Manifest.lock */,
+				86011C6D1E53780200184772 /* Sources */,
+				86011C6E1E53780200184772 /* Frameworks */,
+				86011C6F1E53780200184772 /* Resources */,
+				4E0129F3B15674BA292D8466 /* [CP] Embed Pods Frameworks */,
+				98960E016805B88E87169115 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86011C731E53780200184772 /* PBXTargetDependency */,
+			);
+			name = "UIoT-iOSUITests";
+			productName = "UIoT-iOSUITests";
+			productReference = 86011C711E53780200184772 /* UIoT-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86011C4A1E53780100184772 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = UIoT;
+				TargetAttributes = {
+					86011C511E53780200184772 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = SJAG297899;
+						ProvisioningStyle = Automatic;
+					};
+					86011C651E53780200184772 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = SJAG297899;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 86011C511E53780200184772;
+					};
+					86011C701E53780200184772 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = SJAG297899;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 86011C511E53780200184772;
+					};
+				};
+			};
+			buildConfigurationList = 86011C4D1E53780100184772 /* Build configuration list for PBXProject "UIoT-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 86011C491E53780100184772;
+			productRefGroup = 86011C531E53780200184772 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86011C511E53780200184772 /* UIoT-iOS */,
+				86011C651E53780200184772 /* UIoT-iOSTests */,
+				86011C701E53780200184772 /* UIoT-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86011C501E53780200184772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86011C601E53780200184772 /* LaunchScreen.storyboard in Resources */,
+				86011C5D1E53780200184772 /* Assets.xcassets in Resources */,
+				86011C5B1E53780200184772 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86011C641E53780200184772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86011C6F1E53780200184772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		358B914FDCECD620DB5A26D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4E0129F3B15674BA292D8466 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIoT-iOSUITests/Pods-UIoT-iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CCF635997A1DBE24B5E1D53 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIoT-iOS/Pods-UIoT-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F609CE8B117DDACCBD20504 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIoT-iOSTests/Pods-UIoT-iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A1658A95684856AF49FF4A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIoT-iOSTests/Pods-UIoT-iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98960E016805B88E87169115 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIoT-iOSUITests/Pods-UIoT-iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C87B110069C9CDF75C2F89C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D43595907459C035E6758554 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5498F001A190DA4468EE341 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIoT-iOS/Pods-UIoT-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86011C4E1E53780200184772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86011C581E53780200184772 /* ViewController.swift in Sources */,
+				86011C561E53780200184772 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86011C621E53780200184772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86011C6B1E53780200184772 /* UIoT_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86011C6D1E53780200184772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86011C761E53780200184772 /* UIoT_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86011C681E53780200184772 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86011C511E53780200184772 /* UIoT-iOS */;
+			targetProxy = 86011C671E53780200184772 /* PBXContainerItemProxy */;
+		};
+		86011C731E53780200184772 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86011C511E53780200184772 /* UIoT-iOS */;
+			targetProxy = 86011C721E53780200184772 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		86011C591E53780200184772 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86011C5A1E53780200184772 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		86011C5E1E53780200184772 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86011C5F1E53780200184772 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		86011C781E53780200184772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86011C791E53780200184772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86011C7B1E53780200184772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E53B94F55C32878A45977694 /* Pods-UIoT-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SJAG297899;
+				INFOPLIST_FILE = "UIoT-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "UIoT.UIoT-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		86011C7C1E53780200184772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECF6BA40A09F91DF4A607511 /* Pods-UIoT-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SJAG297899;
+				INFOPLIST_FILE = "UIoT-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "UIoT.UIoT-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		86011C7E1E53780200184772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4E3478E2D51652129CF3056 /* Pods-UIoT-iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SJAG297899;
+				INFOPLIST_FILE = "UIoT-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "UIoT.UIoT-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIoT-iOS.app/UIoT-iOS";
+			};
+			name = Debug;
+		};
+		86011C7F1E53780200184772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73D318CB26C0AF074981FD31 /* Pods-UIoT-iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SJAG297899;
+				INFOPLIST_FILE = "UIoT-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "UIoT.UIoT-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIoT-iOS.app/UIoT-iOS";
+			};
+			name = Release;
+		};
+		86011C811E53780200184772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4386E20A75E638BB9FC7A425 /* Pods-UIoT-iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = SJAG297899;
+				INFOPLIST_FILE = "UIoT-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "UIoT.UIoT-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "UIoT-iOS";
+			};
+			name = Debug;
+		};
+		86011C821E53780200184772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8001AA03797ABFFB94FC3CD9 /* Pods-UIoT-iOSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = SJAG297899;
+				INFOPLIST_FILE = "UIoT-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "UIoT.UIoT-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "UIoT-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		86011C4D1E53780100184772 /* Build configuration list for PBXProject "UIoT-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86011C781E53780200184772 /* Debug */,
+				86011C791E53780200184772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86011C7A1E53780200184772 /* Build configuration list for PBXNativeTarget "UIoT-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86011C7B1E53780200184772 /* Debug */,
+				86011C7C1E53780200184772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		86011C7D1E53780200184772 /* Build configuration list for PBXNativeTarget "UIoT-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86011C7E1E53780200184772 /* Debug */,
+				86011C7F1E53780200184772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		86011C801E53780200184772 /* Build configuration list for PBXNativeTarget "UIoT-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86011C811E53780200184772 /* Debug */,
+				86011C821E53780200184772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 86011C4A1E53780100184772 /* Project object */;
+}
