@@ -125,7 +125,7 @@ class Install
         }
       }
       //From this point on, buckets are ready to be filled, so we are including the second part of the script
-      include "metadados.php";
+      include "bucktKey.php";
     }
     private function createBucket($postfields)
     {
