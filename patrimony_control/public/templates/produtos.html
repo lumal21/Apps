@@ -1,0 +1,152 @@
+<h1 class="ls-title-intro ls-ico-ftp">Produtos</h1>
+
+<!-- Modal para cadastro de produtos -->
+<button data-ls-module="modal" data-target="#novoProdModal" class="ls-btn-primary">Novo Produto</button>
+
+
+<div class="ls-modal" id="novoProdModal">
+	<div class="ls-modal-large">
+		<div class="ls-modal-header">
+			<button data-dismiss="modal">&times;</button>
+			<h4 class="ls-modal-title">Cadastrar Novo Produto</h4>
+		</div>
+		<div class="ls-modal-body">
+			<form class="ls-form row">
+				<fieldset>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">Nome</b>
+						<p class="ls-label-info">Nome do Produto</p>
+						<input type="text" name="nomeInput" required ng-model="novoProdForm.nome">
+					</label>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">Marca</b>
+						<p class="ls-label-info">Marca do Produto</p>
+						<input type="text" name="marcaInput" required ng-model="novoProdForm.marca">
+					</label>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">Caixa</b>
+						<p class="ls-label-info">Caixa do Produto</p>
+						<input type="text" name="caixaInput" required ng-model="novoProdForm.caixa">
+					</label>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">Armário</b>
+						<p class="ls-label-info">Armário do Produto</p>
+						<input type="text" name="armarioInput" required ng-model="novoProdForm.armario">
+					</label>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">Código</b>
+						<p class="ls-label-info">Código do Produto</p>
+						<input type="text" name="codigoInput" required ng-model="novoProdForm.codigo">
+					</label>
+				</fieldset>
+			</form>
+		</div>
+		<div class="ls-modal-footer">
+			<button class="ls-btn ls-float-right" data-dismiss="modal">Close</button>
+			<button class="ls-btn-primary" ng-click="novoProduto(novoProdForm)">Save changes</button>
+		</div>
+	</div>
+</div>
+
+<!-- Fim da modal de cadastro de produtos -->
+
+
+
+
+<div class="ls-box-filter">
+	<form action="" class="ls-form ls-form-inline ls-float-left">
+		<label class="ls-label col-md-6 col-sm-8">
+			<b class="ls-label-text">Status</b>
+			<div class="ls-custom-select ls-field-sm">
+				<select name="" class="ls-select">
+					<option>Todos</option>
+					<option>Disponíveis</option>
+					<option>Emprestados</option>
+					<option>Estragados</option>
+				</select>
+			</div>
+		</label>
+	</form>
+
+	<form action="" class="ls-form ls-form-inline ls-float-right">
+		<label class="ls-label" role="search">
+			<b class="ls-label-text ls-hidden-accessible">Nome do produto</b>
+			<input type="text" id="q" name="q" placeholder="Nome do produto" required="" class="ls-field-sm">
+		</label>
+		<div class="ls-actions-btn">
+			<input type="submit" value="Buscar" class="ls-btn ls-btn-sm" title="Buscar">
+		</div>
+	</form>
+</div>
+
+<table class="ls-table">
+	<thead>
+		<tr>
+			<th>Nome do produto</th>
+			<th class="ls-txt-center hidden-xs">Status</th>
+			<th class="ls-txt-center">Marca</th>
+			<th class="ls-txt-center">Quantidade</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="prod in produtos">
+			<td>{{prod.nme_produto}}</td>
+			<td class="ls-txt-center hidden-xs">
+			<p ng-class="{'color-red': prod.nme_status_prod == 'Quebrado', 'color-yellow': prod.nme_status_prod == 'Emprestado', 'color-green': prod.nme_status_prod === 'Disponivel'}">{{prod.nme_status_prod}}</p>
+			</td>
+			<td class="ls-txt-center">{{prod.marca_produto}}</td>
+			<td class="ls-txt-center">{{prod.qtd_produto}}</td>
+			<td class="ls-txt-right ls-regroup">
+				<a href="#product_details/{{prod.idt_produto}}" class="ls-btn ls-btn-sm">Administrar</a>
+				<div data-ls-module="dropdown" class="ls-dropdown ls-pos-right">
+					<a href="" class="ls-btn ls-btn-sm" role="combobox" aria-expanded="false"></a>
+					<ul class="ls-dropdown-nav" aria-hidden="true">
+						<li><a href="" role="option">Desativar</a></li>
+						<li><a href="" class="ls-color-danger" role="option">Excluir</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="ls-pagination-filter">
+	<ul class="ls-pagination">
+		<li><a href="#">« Anterior</a></li>
+		<li class="ls-active"><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#" class="hidden-xs">4</a></li>
+		<li><a href="#" class="hidden-xs">5</a></li>
+		<li><a href="#">Próximo »</a></li>
+	</ul>
+
+	<div class="ls-filter-view">
+		<label for="">
+			Exibir
+			<div class="ls-custom-select ls-field-sm">
+				<select name="" id="">
+					<option value="10">10</option>
+					<option value="30">30</option>
+					<option value="50">50</option>
+					<option value="100">100</option>
+				</select>
+			</div>
+			ítens por página
+		</label>
+	</div>
+</div>
+
+<!-- Just a css class for change the status product color -->
+<style type="text/css">
+.color-red{
+	color: red;
+}
+.color-green{
+	color: #25b89a;
+}
+.color-yellow{
+	color: yellow;
+}
+</style>

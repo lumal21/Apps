@@ -1,0 +1,97 @@
+<h1 class="ls-title-intro ls-ico-users">Detalhes  do Produto</h1>
+
+
+
+
+
+<div class="ls-box">
+  
+  <form action="" class="ls-form row" data-ls-module="form">
+    <fieldset id="domain-form" class="ls-form-disable ls-form-text">
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Nome</b>
+        <input type="text" value="{{prod_details.nme_produto}}" required="" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Status</b>
+        <input type="text" value="{{prod_details.nme_status_prod}}" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Marca</b>
+        <input type="text" value="{{prod_details.marca_produto}}" required="" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Caixa</b>
+        <input type="text" value="{{prod_details.caixa_produto}}" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Armário</b>
+        <input type="text" value="{{prod_details.armario_produto}}" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Código</b>
+        <input type="text" value="{{prod_details.cod_produto}}" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Quantidade</b>
+        <input type="text" value="{{prod_details.qtd_produto}}" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Cadastrado por</b>
+        <input type="text" value="{{prod_details.usr_cad_produto}}" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Data de cadastro:</b>
+        <input type="text" value="{{prod_details.dta_cad_produto}}" disabled="disabled" class="ls-form-text">
+      </label>
+      
+    </fieldset>
+  
+  </form>
+</div>
+
+<h2 class="ls-title-3">Histórico de empréstimo</h2>
+
+<div class="ls-box-filter">
+    <form action="" class="ls-form ls-form-inline">
+      <label class="ls-label">
+        <b class="ls-label-text">Período</b>
+        <input type="text" name="cel2" class="datepicker">
+      </label>
+
+      <label class="ls-label">
+        <b class="ls-label-text">a</b>
+        <input type="text" name="cel2" class="datepicker">
+      </label>
+      <div class="ls-actions-btn">
+        <button type="button" class="ls-btn">Filtrar</button>
+      </div>
+    </form>
+</div>
+<table class="ls-table">
+  <thead>
+    <tr>
+      <th>Emprestado Para</th>
+      <th>Da Camada</th>
+      <th>Seu E-mail</th>
+      <th>Quantidade Retirada</th>
+      <th>Emprestado por</th>
+      <th>Data da retirada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="hist in history_prod">
+      <td>hist.nme_usuario</td>
+      <td>hits.camada_usuario</td>
+      <td>hist.email_usuario</td>
+      <td>hist.qtd_retirada_saida</td>
+      <td>hist.usr_cad_saia</td>
+      <td>hist.dta_saida</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
