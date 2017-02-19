@@ -17,5 +17,13 @@
         templateUrl: 'templates/product_details.html',
         controller: 'productDetailsCtrl'
     })
+    .when('/usuarios', {
+        templateUrl: 'templates/usuarios.html',
+        controller: 'userCtrl'
+    })
+    .when('/user_details/:id', {
+        templateUrl: 'templates/user_details.html',
+        controller: 'userDetailsCtrl'
+    })
 
 })

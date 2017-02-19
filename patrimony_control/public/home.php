@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="ls-theme-light-green">
+<html class="ls-theme-light-red">
 <head>
     <title>Patrimônio UIOT</title>
 
@@ -10,12 +10,28 @@
     <link href="../lib/locaweb_style/stylesheets/locastyle.css" rel="stylesheet" type="text/css">
     <link href="../lib/sweet_alert/sweetalert.css" rel="stylesheet" type="text/css">
 
+    <!-- We recommended use jQuery 1.10 or up -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="/lib/locaweb_style/javascripts/locastyle.js" type="text/javascript"></script>   
+    <script src="/lib/sweet_alert/sweetalert.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+   (function() {
+    // Inicia a função de Modal manualmente
+    locastyle.init();
+  })();
+  
+</script>
+
     <!-- Angular imports -->
     <script src="../lib/angular-1.5.8/angular.js"></script>
     <script src="../lib/angular-1.5.8/angular-route.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/produtosCtrl.js"></script>
     <script src="js/controllers/productDetailsCtrl.js"></script>
+    <script src="js/controllers/userCtrl.js"></script>
+    <script src="js/controllers/userDetailsCtrl.js"></script>
 </head>
 <body ng-app="patrimonio">
     <div class="ls-topbar">
@@ -49,11 +65,13 @@
 
         <span class="ls-show-sidebar ls-ico-menu"></span>
 
-        <a href="/locawebstyle/documentacao/exemplos//pre-painel"  class="ls-go-next"><span class="ls-text">Voltar à lista de serviços</span></a>
+        <a href="javascript:window.history.go(-1)"  class="ls-go-next">
+            <span class="ls-text">Voltar à página anterior</span>
+        </a>
 
         <!-- Nome do produto/marca com sidebar -->
         <h1 class="ls-brand-name">
-            <a href="#/" class="ls-ico-earth">
+            <a href="#/" class="ls-ico-lamp">
                 <small>UIoT produções</small>Controle de patrimônio
             </a>
         </h1>
@@ -69,11 +87,18 @@
 
             <nav class="ls-menu">
                 <ul>
-                    <li><a href="#/" class="ls-ico-dashboard" title="Dashboard">Dashboard</a></li>
-                    <li><a href="#produtos" class="ls-ico-ftp" title="Produtos">Produtos</a></li>
-                    <li><a href="#" class="ls-ico-stats" title="Relatórios da revenda">Emprestados</a></li>
-                    <li><a href="#" class="ls-ico-stats" title="Relatórios da revenda">Estragados</a></li>
-                    <li><a href="#" class="ls-ico-users" title="Relatórios da revenda">Usuários</a></li>
+                    <li>
+                        <a href="#/" class="ls-ico-dashboard" title="Administração de Dashboard">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#produtos" class="ls-ico-ftp" title="Administração de Produtos">Produtos</a>
+                    </li>
+                    <li>
+                        <a href="#usuarios" class="ls-ico-users" title="Administração de Usuários">Usuários</a>
+                    </li>
+                    <li>
+                        <a href="#usuarios" class="ls-ico-history">Gerenciar Empréstimos</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -101,11 +126,5 @@
             </ul>
         </nav>
     </aside>
-
-    <!-- We recommended use jQuery 1.10 or up -->
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
-    <script src="/lib/locaweb_style/javascripts/locastyle.js" type="text/javascript"></script>
-    <!-- <script src="/lib/jquery/jquery-3.1.1.min.js" type="text/javascript"></script> -->
-    <script src="/lib/sweet_alert/sweetalert.min.js" type="text/javascript"></script>
 </body>
 </html>

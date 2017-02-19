@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html class="ls-theme-light-green">
+<html class="ls-theme-light-red">
 <head>
   <meta charset="utf-8">
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -9,6 +9,8 @@
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <link href="lib/locaweb_style/stylesheets/locastyle.css" rel="stylesheet" type="text/css">
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+  <script src="lib/locaweb_style/javascripts/locastyle.js" type="text/javascript"></script>
 </head>
 
 <body class="documentacao documentacao_exemplos documentacao_exemplos_login-screen documentacao_exemplos_login-screen_index">
@@ -51,8 +53,7 @@
     </div>
   </div>
 
-  <script src="lib/jquery/jquery-3.1.1.min.js" type="text/javascript"></script>
-  <script src="lib/locaweb_style/javascripts/locastyle.js" type="text/javascript"></script>
+ 
 
 </body>
 </html>

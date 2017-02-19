@@ -9,6 +9,5 @@ include_once $_SERVER['DOCUMENT_ROOT']."/controller/product_ctrl.php";
 $prod_id = $_GET["id"];
 
 $prodCtrl = new ProductController();
-$result = $prodCtrl->historyProduct($prod_id);
-
-echo json_encode($result);
+$result = $prodCtrl->deleteProduct($prod_id);
+echo $result;

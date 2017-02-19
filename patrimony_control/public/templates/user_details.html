@@ -1,0 +1,75 @@
+<h1 class="ls-title-intro ls-ico-user">Detalhes  do Usuário</h1>
+
+
+<div class="ls-box">
+  <div class="ls-float-right ls-regroup">
+    <a href="" class="ls-btn-primary" target="_blank">Editar</a>
+    <div data-ls-module="dropdown" class="ls-dropdown ls-pos-right">
+      <a href="#" class="ls-btn" role="combobox" aria-expanded="false"></a>
+      <ul class="ls-dropdown-nav" aria-hidden="true">
+        <li>
+          <a href="" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" class="domain-actions" role="option">Editar</a>
+        </li>
+        <li><a href="#" data-ls-module="modal" data-target="#editPassword" role="option">Alterar senha</a></li>
+        <li><a href="#" role="option">Desativar</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <form action="" class="ls-form row" data-ls-module="form">
+    <fieldset id="domain-form" class="ls-form-disable ls-form-text">
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Nome</b>
+        <input type="text" value="{{usr_details.nme_usuario}}" required="" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Perfil</b>
+        <input type="text" value="{{usr_details.nme_perfil}}" required="" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Telefone:</b>
+        <input type="text" value="{{usr_details.tel_usuario}}" required="" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">E-mal:</b>
+        <input type="text" value="{{usr_details.email_usuario}}" required="" disabled="disabled" class="ls-form-text">
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="ls-label-text">Camada:</b>
+        <input type="text" value="{{usr_details.camada_usuario}}" required="" disabled="disabled" class="ls-form-text">
+      </label>
+    </fieldset>
+    <div class="domain-actions ls-display-none">
+      <button type="submit" class="ls-btn-primary">Salvar</button>
+      <button class="ls-btn" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions">Cancelar</button>
+    </div>
+  </form>
+</div>
+
+
+<h1 class="ls-title-intro ls-ico-ftp">Produtos com Usuário</h1>
+
+<table class="ls-table">
+  <thead>
+    <tr>
+      <th class="ls-txt-center">Nome do produto</th>
+      <th class="ls-txt-center">Código</th>
+      <th class="ls-txt-center">Quantidade Retirada</th>
+      <th class="ls-txt-center">Data Retirada</th>
+      <th class="ls-txt-center">Usuário Responsável</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="prd in user_prod">
+      <td class="ls-txt-center">{{prd.nme_produto}}</td>
+      <td class="ls-txt-center">{{prd.cod_produto}}</td>
+      <td class="ls-txt-center">{{prd.qtd_retirada_saida}}</td>
+      <td class="ls-txt-center">{{prd.dta_saida}}</td>
+      <td class="ls-txt-center">{{prd.usr_cad_saida}}</td>
+      <td class="ls-txt-right">
+        <a href="#product_details/{{prod.idt_produto}}" class="ls-btn-primary">Devolver</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

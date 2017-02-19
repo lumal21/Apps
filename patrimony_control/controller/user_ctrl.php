@@ -26,4 +26,30 @@ class UserController
 		return $this->userDb->login($this->getConnection->get_connection(), $userP);
 	}
 
+
+	public function selectAllUser()
+	{
+		return $this->userDb->selectAllUser($this->getConnection->get_connection());
+	}
+
+	public function selectUser($userId)
+	{
+		return $this->userDb->selectUser($this->getConnection->get_connection(), $userId);
+	}
+
+	public function newUser($user)
+	{	
+		return $this->userDb->insertUser($this->getConnection->get_connection(), $user);
+	}
+
+	public function deleteUser($userId)
+	{
+		return $this->userDb->deleteUser($this->getConnection->get_connection(), $userId);
+	}
+
+	public function selectProdsUser($userId)
+	{
+		return $this->userDb->selectProdsUser($this->getConnection->get_connection(), $userId);
+	}
+
 }

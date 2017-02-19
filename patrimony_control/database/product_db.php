@@ -17,7 +17,6 @@ class ProductDB
 
 		$result = $conn->query($SQL);
 
-
 		if($result->rowCount() > 0)
 		{
 			while($row = $result->fetch())
@@ -76,29 +75,50 @@ class ProductDB
 		$connection = null;
 	}
 
+
+	public function deleteProduct($conn, $prodId)
+	{
+		$SQL_SAIDA = "DELETE FROM patrimonio_uiot.tb_saida WHERE cod_produto = $prodId";
+		$stmt = $conn->prepare($SQL_SAIDA);
+        $stmt->execute();
+
+		$SQL = "DELETE FROM patrimonio_uiot.tb_produto WHERE idt_produto = $prodId";
+		$stmt = $conn->prepare($SQL);
+        $stmt->execute();
+
+        if($stmt == true){
+            return 1;
+        }else{
+            return 0;
+        }
+	}
+
+
 	public function historyProduct($conn, $prodId)
 	{
+	
 		$encode = array();
 
-		$SQL = "SELECT nme_usuario,camada_usuario,email_usuario,usr_cad_saida,qtd_retirada_saida, dta_saida 
-				FROM patrimonio_uiot.tb_produto as prod
-				inner join patrimonio_uiot.tb_status_prod on idt_status_prod = cod_status_prod
-				inner join patrimonio_uiot.tb_saida as saida on prod.idt_produto = saida.cod_produto
-				INNER JOIN patrimonio_uiot.tb_usuario on idt_usuario = cod_usuario
-                WHERE idt_produto = $prodId;";
+		$SQL = "SELECT nme_usuario,camada_usuario AS usr_layer,email_usuario,usr_cad_saida,qtd_retirada_saida, dta_saida, tel_usuario 
+				FROM patrimonio_uiot.tb_produto AS prod
+				INNER JOIN patrimonio_uiot.tb_status_prod ON idt_status_prod = cod_status_prod
+				INNER JOIN patrimonio_uiot.tb_saida AS saida ON prod.idt_produto = saida.cod_produto
+				INNER JOIN patrimonio_uiot.tb_usuario ON idt_usuario = cod_usuario
+				WHERE idt_produto = $prodId;";
 
-        $result = $conn->query($SQL);
+		$result = $conn->query($SQL);
 
-        if($result->rowCount() > 0)
-        {
-            while($row = $result->fetch())
-            {
-                $encode[] = $row;
-            }
-            return $encode;
-        }else{
-            return '';
-        }
+		if($result->rowCount() > 0)
+		{
+			while($row = $result->fetch())
+			{
+				$encode[] = $row;
+			}
+
+			return $encode;
+		}else{
+			return '';
+		}
 	
     }
 

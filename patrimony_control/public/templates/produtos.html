@@ -1,3 +1,9 @@
+<script type="text/javascript">
+   (function() {
+    // Inicia a função de Modal manualmente
+    locastyle.modal.init();
+  })();
+</script>
 <h1 class="ls-title-intro ls-ico-ftp">Produtos</h1>
 
 <!-- Modal para cadastro de produtos -->
@@ -79,6 +85,7 @@
 	</form>
 </div>
 
+
 <table class="ls-table">
 	<thead>
 		<tr>
@@ -97,15 +104,9 @@
 			</td>
 			<td class="ls-txt-center">{{prod.marca_produto}}</td>
 			<td class="ls-txt-center">{{prod.qtd_produto}}</td>
-			<td class="ls-txt-right ls-regroup">
+			<td class="ls-txt-right">
 				<a href="#product_details/{{prod.idt_produto}}" class="ls-btn ls-btn-sm">Administrar</a>
-				<div data-ls-module="dropdown" class="ls-dropdown ls-pos-right">
-					<a href="" class="ls-btn ls-btn-sm" role="combobox" aria-expanded="false"></a>
-					<ul class="ls-dropdown-nav" aria-hidden="true">
-						<li><a href="" role="option">Desativar</a></li>
-						<li><a href="" class="ls-color-danger" role="option">Excluir</a></li>
-					</ul>
-				</div>
+				<a class="ls-btn ls-ico-remove ls-color-danger" ng-click="deleteP(prod.idt_produto)"></a>
 			</td>
 		</tr>
 	</tbody>
@@ -147,6 +148,6 @@
 	color: #25b89a;
 }
 .color-yellow{
-	color: yellow;
+	color: #FF8C00;
 }
 </style>

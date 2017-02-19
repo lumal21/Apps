@@ -40,6 +40,11 @@ class ProductController
 		return $this->prodDb->historyProduct($this->getConnection->get_connection(), $prodId);	
 	}
 
+	public function deleteProduct($prodId)
+	{
+		return $this->prodDb->deleteProduct($this->getConnection->get_connection(), $prodId);
+	}
+
 
 	/**
 	 *  Function to get the current date

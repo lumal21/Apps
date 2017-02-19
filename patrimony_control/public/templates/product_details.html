@@ -1,11 +1,11 @@
 <h1 class="ls-title-intro ls-ico-users">Detalhes  do Produto</h1>
 
 
-
-
-
 <div class="ls-box">
-  
+  <div class="ls-float-right">
+  <a data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" class="domain-actions ls-btn-primary" role="option">Editar</a>
+</div>
+
   <form action="" class="ls-form row" data-ls-module="form">
     <fieldset id="domain-form" class="ls-form-disable ls-form-text">
       <label class="ls-label col-md-6 col-lg-8">
@@ -47,10 +47,19 @@
       
     </fieldset>
   
+    <div class="domain-actions ls-display-none">
+      <button type="submit" class="ls-btn-primary">Salvar</button>
+      <button class="ls-btn" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions">Cancelar</button>
+    </div>
   </form>
 </div>
 
-<h2 class="ls-title-3">Histórico de empréstimo</h2>
+
+
+
+
+
+<h1 class="ls-title-intro ls-ico-book">Histórico de empréstimo</h1>
 
 <div class="ls-box-filter">
     <form action="" class="ls-form ls-form-inline">
@@ -74,6 +83,7 @@
       <th>Emprestado Para</th>
       <th>Da Camada</th>
       <th>Seu E-mail</th>
+      <th>Seu Telefone</th>
       <th>Quantidade Retirada</th>
       <th>Emprestado por</th>
       <th>Data da retirada</th>
@@ -81,12 +91,13 @@
   </thead>
   <tbody>
     <tr ng-repeat="hist in history_prod">
-      <td>hist.nme_usuario</td>
-      <td>hits.camada_usuario</td>
-      <td>hist.email_usuario</td>
-      <td>hist.qtd_retirada_saida</td>
-      <td>hist.usr_cad_saia</td>
-      <td>hist.dta_saida</td>
+      <td>{{hist.nme_usuario}}</td>
+      <td>{{hist.usr_layer}}</td>
+      <td>{{hist.email_usuario}}</td>
+      <td>{{hist.tel_usuario}}</td>
+      <td>{{hist.qtd_retirada_saida}}</td>
+      <td>{{hist.usr_cad_saida}}</td>
+      <td>{{hist.dta_saida}}</td>
     </tr>
   </tbody>
 </table>

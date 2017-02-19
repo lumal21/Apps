@@ -1,0 +1,132 @@
+<script type="text/javascript">
+	(function() {
+    // Inicia a função de Modal manualmente
+    locastyle.modal.init();
+})();
+</script>
+<h1 class="ls-title-intro ls-ico-users">Usuários</h1>
+
+<!-- Modal para cadastro de produtos -->
+<button data-ls-module="modal" data-target="#novoProdModal" class="ls-btn-primary">Novo Usuário</button>
+
+
+<div class="ls-modal" id="novoProdModal">
+	<div class="ls-modal-large">
+		<div class="ls-modal-header">
+			<button data-dismiss="modal">&times;</button>
+			<h4 class="ls-modal-title">Cadastrar Novo Usuário</h4>
+		</div>
+		<div class="ls-modal-body">
+			<form class="ls-form row">
+				<fieldset>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">Usuário</b>
+						<p class="ls-label-info">Nome do Usuário</p>
+						<input type="text" name="nomeInput" required ng-model="novoUsrForm.nme_usuario">
+					</label>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">Telefone</b>
+						<p class="ls-label-info">Telefone do Usuário</p>
+						<input type="text" name="telInput" required ng-model="novoUsrForm.tel_usuario">
+					</label>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">E-mail</b>
+						<p class="ls-label-info">E-mail do Usuário</p>
+						<input type="text" name="emailInput" required ng-model="novoUsrForm.email_usuario">
+					</label>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">Camada</b>
+						<p class="ls-label-info">Camada do Usuário</p>
+						<input type="text" name="camadaInput" required ng-model="novoUsrForm.camada_usuario">
+					</label>
+					<label class="ls-label col-md-8">
+						<b class="ls-label-text">Perfil do Usuário</b>
+						<div class="ls-custom-select">
+							<select class="ls-custom" name="perfilInput" ng-model="novoUsrForm.cod_perfil">
+								<option selected="selected">Selecione o perfil</option>
+								<option value="1">Administrador</option>
+								<option value="2">Comum</option>
+							</select>
+						</div>
+					</label>
+				</fieldset>
+			</form>
+		</div>
+		<div class="ls-modal-footer">
+			<button class="ls-btn ls-float-right" data-dismiss="modal">Cancelar</button>
+			<button class="ls-btn-primary" ng-click="newUser(novoUsrForm)">Cadastrar</button>
+		</div>
+	</div>
+</div>
+
+<!-- Fim da modal de cadastro de produtos -->
+
+
+
+
+<div class="ls-box-filter">
+	
+	<form action="" class="ls-form ls-form-inline ls-float-left">
+		<div class="ls-actions-btn">
+			<input type="submit" value="Buscar" class="ls-btn ls-btn-sm" title="Buscar">
+		</div>
+		<label class="ls-label col-md-10 col-sm-8" role="search">
+			<b class="ls-label-text ls-hidden-accessible">Nome do usuário</b>
+			<input type="text" ng-model="findUser" placeholder="Procurar nome do usuário" class="ls-field-sm">
+		</label>
+	</form>
+</div>
+
+
+<table class="ls-table">
+	<thead>
+		<tr>
+			<th class="ls-txt-center">Nome</th>
+			<th class="ls-txt-center hidden-xs">Perfil</th>
+			<th class="ls-txt-center">Telefone</th>
+			<th class="ls-txt-center">E-mail</th>
+			<th class="ls-txt-center">Camada</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="usr in users | filter: findUser">
+			<td class="ls-txt-center">{{usr.nme_usuario}}</td>
+			<td class="ls-txt-center">{{usr.nme_perfil}}</td>
+			<td class="ls-txt-center">{{usr.tel_usuario}}</td>
+			<td class="ls-txt-center">{{usr.email_usuario}}</td>
+			<td class="ls-txt-center">{{usr.camada_usuario}}</td>
+			<td class="ls-txt-right">
+				<a href="#user_details/{{usr.idt_usuario}}" class="ls-btn ls-btn-sm">Administrar</a>
+				<a class="ls-btn ls-ico-remove ls-color-danger" ng-click="deleteUsr(usr.idt_usuario)"></a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="ls-pagination-filter">
+	<ul class="ls-pagination">
+		<li><a href="#">« Anterior</a></li>
+		<li class="ls-active"><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#" class="hidden-xs">4</a></li>
+		<li><a href="#" class="hidden-xs">5</a></li>
+		<li><a href="#">Próximo »</a></li>
+	</ul>
+
+	<div class="ls-filter-view">
+		<label for="">
+			Exibir
+			<div class="ls-custom-select ls-field-sm">
+				<select name="" id="">
+					<option value="10">10</option>
+					<option value="30">30</option>
+					<option value="50">50</option>
+					<option value="100">100</option>
+				</select>
+			</div>
+			ítens por página
+		</label>
+	</div>
+</div>
