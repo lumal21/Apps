@@ -54,8 +54,6 @@ public class DeviceActivity extends Activity {
 
 //                Toast.makeText(getApplicationContext(), ipAddress, Toast.LENGTH_SHORT).show();
 //                Toast.makeText(getApplicationContext(), macpAddress, Toast.LENGTH_SHORT).show();
-
-                startActivity(new Intent(DeviceActivity.this, SensorsActivity.class));
             }
         });
     }
@@ -82,7 +80,12 @@ public class DeviceActivity extends Activity {
      */
     private void validateIp(String ip){
         if (ip.equals("0.0.0.0")){
+            //Open the dialog box if the ip is invalid
             builderIpDialog();
+        }
+        else {
+            //if the ip is valid, start next activity
+            startActivity(new Intent(getApplicationContext(), SensorsActivity.class));
         }
     }
 
@@ -102,6 +105,11 @@ public class DeviceActivity extends Activity {
 
                 Toast.makeText(getApplicationContext(), input.getText().toString().trim(),
                         Toast.LENGTH_SHORT).show();
+
+                //assign new ip
+                ipAddress = input.getText().toString();
+                //start new activity
+                startActivity(new Intent(getApplicationContext(), SensorsActivity.class));
             }
 
         });
