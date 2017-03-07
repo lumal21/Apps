@@ -16,6 +16,7 @@
 		86011C601E53780200184772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86011C5E1E53780200184772 /* LaunchScreen.storyboard */; };
 		86011C6B1E53780200184772 /* UIoT_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86011C6A1E53780200184772 /* UIoT_iOSTests.swift */; };
 		86011C761E53780200184772 /* UIoT_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86011C751E53780200184772 /* UIoT_iOSUITests.swift */; };
+		8659CEC91E6F3C36006867E7 /* UiotClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659CEC81E6F3C36006867E7 /* UiotClient.swift */; };
 		DA7EDA8F0271750B179A0B93 /* Pods_UIoT_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7479E3A4EC27920DD71E5A16 /* Pods_UIoT_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		86011C711E53780200184772 /* UIoT-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIoT-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86011C751E53780200184772 /* UIoT_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIoT_iOSUITests.swift; sourceTree = "<group>"; };
 		86011C771E53780200184772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8659CEC81E6F3C36006867E7 /* UiotClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiotClient.swift; sourceTree = "<group>"; };
 		E4E3478E2D51652129CF3056 /* Pods-UIoT-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOSTests/Pods-UIoT-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E53B94F55C32878A45977694 /* Pods-UIoT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOS/Pods-UIoT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ECF6BA40A09F91DF4A607511 /* Pods-UIoT-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOS/Pods-UIoT-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				86011C551E53780200184772 /* AppDelegate.swift */,
 				86011C571E53780200184772 /* ViewController.swift */,
+				8659CECA1E6F3C49006867E7 /* Model */,
 				86011C591E53780200184772 /* Main.storyboard */,
 				86011C5C1E53780200184772 /* Assets.xcassets */,
 				86011C5E1E53780200184772 /* LaunchScreen.storyboard */,
@@ -150,6 +153,22 @@
 				86011C771E53780200184772 /* Info.plist */,
 			);
 			path = "UIoT-iOSUITests";
+			sourceTree = "<group>";
+		};
+		8659CECA1E6F3C49006867E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8659CECB1E6F3C57006867E7 /* UIOT */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8659CECB1E6F3C57006867E7 /* UIOT */ = {
+			isa = PBXGroup;
+			children = (
+				8659CEC81E6F3C36006867E7 /* UiotClient.swift */,
+			);
+			name = UIOT;
 			sourceTree = "<group>";
 		};
 		FDD692EFEDA54938FE2B0BA5 /* Pods */ = {
@@ -451,6 +470,7 @@
 			files = (
 				86011C581E53780200184772 /* ViewController.swift in Sources */,
 				86011C561E53780200184772 /* AppDelegate.swift in Sources */,
+				8659CEC91E6F3C36006867E7 /* UiotClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +727,7 @@
 				86011C7C1E53780200184772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86011C7D1E53780200184772 /* Build configuration list for PBXNativeTarget "UIoT-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -715,6 +736,7 @@
 				86011C7F1E53780200184772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86011C801E53780200184772 /* Build configuration list for PBXNativeTarget "UIoT-iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +745,7 @@
 				86011C821E53780200184772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
