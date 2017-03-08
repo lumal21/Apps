@@ -42,7 +42,17 @@ class UiotClient: NSObject {
         channel = json["channel"].stringValue
         client_time = json["client_time"].doubleValue
         server_time = json["server_time"].doubleValue
-        
+    }
+    
+    init(name : String, chipset : String, mac : String, serial : String, processor : String, channel : String, client_time : Double) {
+        self.server_time = -1
+        self.name = name
+        self.chipset = chipset
+        self.mac = mac
+        self.serial = serial
+        self.processor = processor
+        self.channel = channel
+        self.client_time = client_time
     }
 
 }

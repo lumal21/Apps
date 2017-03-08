@@ -30,18 +30,26 @@ class UiotData: NSObject {
     var service_id : Int
     var values : [(Int , Int)]
     var tag : String
-    var server_time : String
-    var client_time : String
+    var server_time : Double
+    var client_time : Double
     
     init(json : JSON) {
         service_id = json["service_id"].intValue
         tag = json["tag"].stringValue
-        client_time = json["client_time"].stringValue
-        server_time = json["server_time"].stringValue
+        client_time = json["client_time"].doubleValue
+        server_time = json["server_time"].doubleValue
         values = []
         for (_, js) in json["values"]{
             values.append((js["value1"].intValue, js["value2"].intValue))
         }
+    }
+    
+    init(service_id : Int, tag : String, values : [(Int, Int)], client_time : Double) {
+        self.service_id = service_id
+        self.values = values
+        self.tag = tag
+        self.client_time = client_time
+        self.server_time = -1
     }
     
 }

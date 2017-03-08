@@ -42,12 +42,26 @@ class UiotService: NSObject {
         }
     }
     
+    init(name : String, return_type : String, client_time : Double, parameters : [Parameter]) {
+        self.name = name
+        self.return_type = return_type
+        self.client_time = client_time
+        self.parameters = parameters
+        self.server_time = -1
+    }
+    
+    
     class Parameter{
         var name : String
         var type : String
         init(json : JSON) {
             name = json["name"].stringValue
             type = json["type"].stringValue
+        }
+        
+        init(name : String, type : String) {
+            self.name = name
+            self.type = type
         }
     }
 }
