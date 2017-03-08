@@ -1,6 +1,0 @@
-framework module Pods_UIoT_iOSTests {
-  umbrella header "Pods-UIoT-iOSTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

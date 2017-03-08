@@ -23,7 +23,12 @@ import SwiftyJSON
  }
  */
 
-class UiotClient: NSObject {
+class UiotClient: NSObject, UiotModelProtocol {
+    
+    internal func jsonRepresentation() -> String {
+        <#code#>
+    }
+
     var name : String
     var chipset : String
     var mac : String
