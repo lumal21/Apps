@@ -85,7 +85,7 @@ extension UiotService{
                 "type": type,
                 ]
             
-            return Util.closeStringWithBraces(fromString: "\(dict)")
+            return "\(dict)"
         }
     }
 

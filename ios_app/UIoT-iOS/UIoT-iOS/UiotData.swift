@@ -87,7 +87,7 @@ extension UiotData{
                 "value2": value2,
                 ]
             
-            return Util.closeStringWithBraces(fromString: "\(dict)")
+            return "\(dict)"
         }
 
         
