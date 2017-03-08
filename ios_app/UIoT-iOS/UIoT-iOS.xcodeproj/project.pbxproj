@@ -21,6 +21,7 @@
 		8659CECF1E6F4B13006867E7 /* UiotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659CECE1E6F4B13006867E7 /* UiotData.swift */; };
 		8659CED11E6F9990006867E7 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659CED01E6F9990006867E7 /* DAO.swift */; };
 		8659CED31E7043A2006867E7 /* UiotModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659CED21E7043A2006867E7 /* UiotModelProtocol.swift */; };
+		8659CED51E705129006867E7 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659CED41E705129006867E7 /* Util.swift */; };
 		DA7EDA8F0271750B179A0B93 /* Pods_UIoT_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7479E3A4EC27920DD71E5A16 /* Pods_UIoT_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		8659CECE1E6F4B13006867E7 /* UiotData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiotData.swift; sourceTree = "<group>"; };
 		8659CED01E6F9990006867E7 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		8659CED21E7043A2006867E7 /* UiotModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiotModelProtocol.swift; sourceTree = "<group>"; };
+		8659CED41E705129006867E7 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		E4E3478E2D51652129CF3056 /* Pods-UIoT-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOSTests/Pods-UIoT-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E53B94F55C32878A45977694 /* Pods-UIoT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOS/Pods-UIoT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ECF6BA40A09F91DF4A607511 /* Pods-UIoT-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIoT-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIoT-iOS/Pods-UIoT-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				86011C551E53780200184772 /* AppDelegate.swift */,
 				86011C571E53780200184772 /* ViewController.swift */,
+				8659CED41E705129006867E7 /* Util.swift */,
 				8659CECA1E6F3C49006867E7 /* Model */,
 				86011C591E53780200184772 /* Main.storyboard */,
 				86011C5C1E53780200184772 /* Assets.xcassets */,
@@ -483,6 +486,7 @@
 				8659CED11E6F9990006867E7 /* DAO.swift in Sources */,
 				86011C581E53780200184772 /* ViewController.swift in Sources */,
 				8659CED31E7043A2006867E7 /* UiotModelProtocol.swift in Sources */,
+				8659CED51E705129006867E7 /* Util.swift in Sources */,
 				86011C561E53780200184772 /* AppDelegate.swift in Sources */,
 				8659CECF1E6F4B13006867E7 /* UiotData.swift in Sources */,
 				8659CECD1E6F4209006867E7 /* UiotService.swift in Sources */,

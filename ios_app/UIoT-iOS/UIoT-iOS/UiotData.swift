@@ -28,7 +28,7 @@ import SwiftyJSON
 
 class UiotData: NSObject {
     var service_id : Int
-    var values : [(Int , Int)]
+    var values : [Values]
     var tag : String
     var server_time : Double
     var client_time : Double
@@ -40,11 +40,11 @@ class UiotData: NSObject {
         server_time = json["server_time"].doubleValue
         values = []
         for (_, js) in json["values"]{
-            values.append((js["value1"].intValue, js["value2"].intValue))
+            values.append(Values(json : js))
         }
     }
     
-    init(service_id : Int, tag : String, values : [(Int, Int)], client_time : Double) {
+    init(service_id : Int, tag : String, values : [Values], client_time : Double) {
         self.service_id = service_id
         self.values = values
         self.tag = tag
@@ -52,4 +52,44 @@ class UiotData: NSObject {
         self.server_time = -1
     }
     
+    
+    override var description: String{
+        let dict : [String : Any] = [
+            "service_id": service_id,
+            "values": values,
+            "tag": tag,
+            "client_time": client_time
+        ]
+        return "\(dict)"
+    }
+    
+}
+
+//INNER STRUCT VALUES
+extension UiotData{
+    struct Values : CustomStringConvertible {
+        var value1 : Int
+        var value2 : Int
+        
+        init(_ value1 : Int, _ value2 : Int) {
+            self.value1 = value1
+            self.value2 = value2
+        }
+        
+        init(json : JSON) {
+            self.value1 = json["value1"].intValue
+            self.value2 = json["value2"].intValue
+        }
+        
+        var description: String{
+            let dict : [String : Any] = [
+                "value1": value1,
+                "value2": value2,
+                ]
+            
+            return Util.closeStringWithBraces(fromString: "\(dict)")
+        }
+
+        
+    }
 }

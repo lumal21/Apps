@@ -50,10 +50,25 @@ class UiotService: NSObject {
         self.server_time = -1
     }
     
+    override var description: String{
+        let dict : [String : Any] = [
+            "name": name,
+            "parameters": parameters,
+            "return_type": return_type,
+            "client_time": client_time
+        ]
+        
+        return "\(dict)"
+    }
     
-    class Parameter{
+}
+
+//INNER CLASS PARAMETER
+extension UiotService{
+    struct Parameter : CustomStringConvertible{
         var name : String
         var type : String
+        
         init(json : JSON) {
             name = json["name"].stringValue
             type = json["type"].stringValue
@@ -63,5 +78,15 @@ class UiotService: NSObject {
             self.name = name
             self.type = type
         }
+        
+        var description: String{
+            let dict : [String : Any] = [
+                "name": name,
+                "type": type,
+                ]
+            
+            return Util.closeStringWithBraces(fromString: "\(dict)")
+        }
     }
+
 }

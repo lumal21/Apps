@@ -13,6 +13,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("CLIENT")
+        print( UiotClient(name: "blaName", chipset: "blachipset", mac: "blamac", serial: "blaserial", processor: "blaprocessor", channel: "blachannel", client_time: 999999))
+        
+        print("")
+        print("")
+        print("SERVICE")
+        let p1 = UiotService.Parameter(name: "parameter1", type: "tipo1")
+        let p2 = UiotService.Parameter(name: "parameter2", type: "tipo2")
+        print(UiotService(name: "sname", return_type: "sreturn", client_time: 7777, parameters: [p1, p2]))
+        
+        print("")
+        print("")
+        print("DATA")
+        print(UiotData(service_id: 22, tag: "datatag", values: [UiotData.Values(1, 1), UiotData.Values(2,2)], client_time: 8888))
     }
 
     override func didReceiveMemoryWarning() {

@@ -23,12 +23,8 @@ import SwiftyJSON
  }
  */
 
-class UiotClient: NSObject, UiotModelProtocol {
-    
-    internal func jsonRepresentation() -> String {
-        <#code#>
-    }
-
+class UiotClient: NSObject {
+   
     var name : String
     var chipset : String
     var mac : String
@@ -58,6 +54,22 @@ class UiotClient: NSObject, UiotModelProtocol {
         self.processor = processor
         self.channel = channel
         self.client_time = client_time
+    }
+    
+    
+
+    override var description: String{
+        let dict :[String : Any] = [
+            "name" : name,
+            "chipset": chipset,
+            "mac": mac,
+            "serial": serial,
+            "processor": processor,
+            "channel": channel,
+            "client_time": client_time
+        ]
+        
+        return "\(dict)"
     }
 
 }
