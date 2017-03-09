@@ -11,7 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class DAO: NSObject {
-    private let host = "https://raise.homol.uiot.org"
+    fileprivate let host = "https://raise.homol.uiot.org"
+    fileprivate let header = ["Content-Type": "application/json", "Accept" : "application/json"]
     struct apiEndPoint {
         static let client = "/client/"
         static let registerClient = "/client/register/"
@@ -22,16 +23,42 @@ class DAO: NSObject {
     }
     
     
-    private func AlamofireRequest(endPoint : String, parameters : Parameters?) -> DataRequest{
-        let header = ["Content-Type": "application/json", "Accept" : "application/json"]
-        return Alamofire.request(host+endPoint, method: HTTPMethod.post, parameters: parameters, encoding: URLEncoding.default, headers: header)
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+//all about GET DATA from server
+//MARK:- GET
+//extension DAO{
+//    //MARK:- GET
+//    
+//    func get(data : UiotData, onSuccess: @escaping (String)->(), onFailure: @escaping (String)->()){
+//        print("Registering DATA")
+//        self.registerAll(data, onSuccess: {json in
+//            onSuccess(json["message"].stringValue)
+//        }, onFailure: {msg in
+//            onFailure(msg)
+//        })
+//    }
+//    
+//}
+//all about REGISTER into server
+//MARK:- REGISTER
+extension DAO{
+    
+    //MARK: PRIVATE
     
     private func responseJSON(dataRequest : DataRequest, onSuccess: @escaping (JSON)->(), onFailure: @escaping (String)->()){
         
         dataRequest.responseJSON{ response in
             print("Request sent to: \(response.request)")
-//            print("Response: \(response.response)")
+            //            print("Response: \(response.response)")
             
             if response.result.isSuccess  {
                 if let json = response.result.value as? JSON {
@@ -57,88 +84,59 @@ class DAO: NSObject {
         
     }
     
-    
     ///On success it should have the Token
-    func register(_ client : UiotClient, onSuccess: @escaping (String)->()){
-        
-        let req = AlamofireRequest(endPoint: apiEndPoint.registerClient, parameters: client.toDictionary)
+    private func registerAll(_ object : CustomDictionaryConvertible, endPoint : String, onSuccess: @escaping (JSON)->(), onFailure: @escaping (String)->()){
+        let req = Alamofire.request(host+endPoint, method: HTTPMethod.post, parameters: object.toDictionary, encoding: URLEncoding.default, headers: header)
+            //AlamofireRequest(endPoint: apiEndPoint.registerClient, parameters: object.toDictionary)
         
         responseJSON(dataRequest: req, onSuccess: {json in
-            
-        }, onFailure: {_ in
+            onSuccess(json)
+        }, onFailure: {msg in
+            onFailure(msg)
         })
+    }
+    
+    //MARK: EXTERNAL USE
+    ///OnSuccess should have the TOKEN for registered USER, but the token will be automatically seted up on the client anyways. If fails then Fail message is returned and nothing is setted up on client.token
+    func register(client : UiotClient, onSuccess: @escaping (String)->(), onFailure: @escaping (String)->()){
+        print("Registering CLIENT")
+        /*
+         "code": 200,
+         "message": "Success",
+         "token": "AAFFAAFFAAFFAAFF"
+         */
         
+        self.registerAll(client,endPoint: apiEndPoint.registerClient , onSuccess: {json in
+            client.token = json["token"].stringValue
+            onSuccess(json["token"].stringValue)
+        }, onFailure: {msg in
+            onFailure(msg)
+        })
     }
     
     
+    ///On success the message "success" is returned, and on failure the message with the reason is returned.
+    func register(service : UiotService, onSuccess: @escaping (String)->(), onFailure: @escaping (String)->()){
+        print("Registering SERVICE")
+        self.registerAll(service,endPoint: apiEndPoint.registerService, onSuccess: {json in
+            onSuccess(json["message"].stringValue)
+        }, onFailure: {msg in
+            onFailure(msg)
+        })
+    }
     
     
+    ///On success the message "success" is returned, and on failure the message with the reason is returned.
+    func register(data : UiotData, onSuccess: @escaping (String)->(), onFailure: @escaping (String)->()){
+        print("Registering DATA")
+        self.registerAll(data,endPoint: apiEndPoint.registerData, onSuccess: {json in
+            onSuccess(json["message"].stringValue)
+        }, onFailure: {msg in
+            onFailure(msg)
+        })
+    }
     
     
-    
-    
-    
-    
-    
-    
+
 }
-
-
-/*
- //SERVICE
- 
- curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '[ \
- { \
- "token": "AAFFAAFFAAFFAAFF", \
- "name": "Get temp", \
- "parameters": [ \
- { \
- "name": "Temp", \
- "type": "float" \
- } \
- ], \
- "return_type": "float", \
- "client_time": 1317427200 \
- } \
- ]' 'http://raw.githubusercontent.com/service/register/?type=true'
- 
- //DATA
- curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '[ \
- { \
- "token": "AAFFAAFFAAFFAAFF", \
- "service_id": 15, \
- "values": [ \
- { \
- "value1": 35, \
- "value2": 12 \
- } \
- ], \
- "tag": "Chip", \
- "client_time": 1317427200 \
- } \
- ]' 'http://raw.githubusercontent.com/data/register/'
- 
- //CLIENT
- curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ \
- "name": "Raspberry PI", \
- "chipset": "AMD 790FX", \
- "mac": "FF:FF:FF:FF:FF:FF", \
- "serial": "C210", \
- "processor": "Intel I3", \
- "channel": "Ethernet", \
- "client_time": 1317427200 \
- }' 'http://raw.githubusercontent.com/client/register/'
- */
-
-
-
-
-
-
-
-
-
-
-
-
 

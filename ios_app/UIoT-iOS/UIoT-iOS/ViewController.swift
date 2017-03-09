@@ -17,9 +17,7 @@ class ViewController: UIViewController {
         print("CLIENT")
         let client = UiotClient(name: "blaName", chipset: "blachipset", mac: "blamac", serial: "blaserial", processor: "blaprocessor", channel: "blachannel", client_time: 999999)
 
-        DAO().register(client, onSuccess: { suc in
-            print(suc)
-        })
+        DAO().register(client: client, onSuccess: {_ in}, onFailure: {_ in})
         
         
         
