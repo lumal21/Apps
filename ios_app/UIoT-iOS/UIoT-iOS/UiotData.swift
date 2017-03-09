@@ -9,24 +9,24 @@
 import UIKit
 import SwiftyJSON
 /**
-
-
-    {
-    "service_id": 15,
-    "values": [
-        {
-        "value1": 35,
-        "value2": 12
-        }
-    ],
-    "tag": "Chip",
-    "client_time": 1317427200,
-    "server_time": 1317987654
-    }
+ 
+ 
+ {
+ "service_id": 15,
+ "values": [
+ {
+ "value1": 35,
+ "value2": 12
+ }
+ ],
+ "tag": "Chip",
+ "client_time": 1317427200,
+ "server_time": 1317987654
+ }
  
  */
 
-class UiotData: NSObject {
+class UiotData: NSObject, CustomDictionaryConvertible {
     var service_id : Int
     var values : [Values]
     var tag : String
@@ -54,20 +54,24 @@ class UiotData: NSObject {
     
     
     override var description: String{
-        let dict : [String : Any] = [
+        return "\(toDictionary)"
+    }
+    
+    var toDictionary: Dictionary<String, Any>{
+        return [
             "service_id": service_id,
             "values": values,
             "tag": tag,
             "client_time": client_time
         ]
-        return "\(dict)"
+        
     }
     
 }
 
 //INNER STRUCT VALUES
 extension UiotData{
-    struct Values : CustomStringConvertible {
+    struct Values : CustomStringConvertible, CustomDictionaryConvertible {
         var value1 : Int
         var value2 : Int
         
@@ -82,14 +86,16 @@ extension UiotData{
         }
         
         var description: String{
-            let dict : [String : Any] = [
+            return "\(toDictionary)"
+        }
+        
+        var toDictionary: Dictionary<String, Any>{
+            return [
                 "value1": value1,
                 "value2": value2,
-                ]
+            ]
             
-            return "\(dict)"
         }
-
         
     }
 }

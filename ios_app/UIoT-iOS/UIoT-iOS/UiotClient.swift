@@ -23,7 +23,7 @@ import SwiftyJSON
  }
  */
 
-class UiotClient: NSObject {
+class UiotClient: NSObject, CustomDictionaryConvertible {
    
     var name : String
     var chipset : String
@@ -33,6 +33,7 @@ class UiotClient: NSObject {
     var channel : String
     var client_time : Double
     var server_time : Double
+    var token : String?
     
     init(json : JSON) {
         name = json["name"].stringValue

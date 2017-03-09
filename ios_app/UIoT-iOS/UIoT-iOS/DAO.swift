@@ -58,18 +58,18 @@ class DAO: NSObject {
     }
     
     
-    ///On success it should return the Token
+    ///On success it should have the Token
     func register(_ client : UiotClient, onSuccess: @escaping (String)->()){
         
         let req = AlamofireRequest(endPoint: apiEndPoint.registerClient, parameters: client.toDictionary)
         
         responseJSON(dataRequest: req, onSuccess: {json in
-            print(json)
+            
         }, onFailure: {_ in
-            print("do something")
         })
         
     }
+    
     
     
     

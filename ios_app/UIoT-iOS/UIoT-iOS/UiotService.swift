@@ -23,7 +23,7 @@ import SwiftyJSON
         "server_time": 1317987654
         } */
 
-class UiotService: NSObject {
+class UiotService: NSObject, CustomDictionaryConvertible {
 
     var name : String
     var parameters : [Parameter]
@@ -51,21 +51,25 @@ class UiotService: NSObject {
     }
     
     override var description: String{
-        let dict : [String : Any] = [
+        
+        
+        return "\(toDictionary)"
+    }
+    
+    var toDictionary: Dictionary<String, Any>{
+        return [
             "name": name,
             "parameters": parameters,
             "return_type": return_type,
             "client_time": client_time
         ]
-        
-        return "\(dict)"
     }
     
 }
 
 //INNER CLASS PARAMETER
 extension UiotService{
-    struct Parameter : CustomStringConvertible{
+    struct Parameter : CustomStringConvertible,CustomDictionaryConvertible{
         var name : String
         var type : String
         
@@ -80,12 +84,15 @@ extension UiotService{
         }
         
         var description: String{
-            let dict : [String : Any] = [
+            return "\(toDictionary)"
+        }
+        
+        var toDictionary: Dictionary<String, Any>{
+            return  [
                 "name": name,
                 "type": type,
-                ]
-            
-            return "\(dict)"
+            ]
+
         }
     }
 
