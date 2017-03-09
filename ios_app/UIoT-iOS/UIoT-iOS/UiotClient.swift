@@ -58,7 +58,7 @@ class UiotClient: NSObject {
     
     
 
-    override var description: String{
+    var toDictionary: Dictionary<String, Any>{
         let dict :[String : Any] = [
             "name" : name,
             "chipset": chipset,
@@ -69,7 +69,11 @@ class UiotClient: NSObject {
             "client_time": client_time
         ]
         
-        return "\(dict)"
+        return dict
+    }
+    
+    override var description: String{
+        return "\(self.toDictionary)"
     }
 
 }

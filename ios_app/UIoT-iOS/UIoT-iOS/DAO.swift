@@ -8,35 +8,67 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class DAO: NSObject {
-    private let host = "http://raise.homol.uiot.org/"
-    private var endPoint = ""
-//    var token : String = ""
-    init(_ endPoint : String) {
-        self.endPoint = endPoint
+    private let host = "https://raise.homol.uiot.org"
+    struct apiEndPoint {
+        static let client = "/client/"
+        static let registerClient = "/client/register/"
+        static let service = "/service/"
+        static let registerService = "/service/register/"
+        static let data = "/data/"
+        static let registerData = "/data/register/"
     }
-
-    private var url : String{
-        if endPoint.characters.first == "/"{
-            endPoint.remove(at: endPoint.startIndex)
-        }
-        return "\(host)\(endPoint)"
+    
+    
+    private func AlamofireRequest(endPoint : String, parameters : Parameters?) -> DataRequest{
+        let header = ["Content-Type": "application/json", "Accept" : "application/json"]
+        return Alamofire.request(host+endPoint, method: HTTPMethod.post, parameters: parameters, encoding: URLEncoding.default, headers: header)
     }
- 
-    func register(_ Object : Any?){
-        print (url)
-        Alamofire.request(url).responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+    
+    private func responseJSON(dataRequest : DataRequest, onSuccess: @escaping (JSON)->(), onFailure: @escaping (String)->()){
+        
+        dataRequest.responseJSON{ response in
+            print("Request sent to: \(response.request)")
+//            print("Response: \(response.response)")
             
-            if let json = response.result.value {
-                print("JSON: \(json)")
+            if response.result.isSuccess  {
+                if let json = response.result.value as? JSON {
+                    if json["code"] == "200"{
+                        print("JSON: \(json)")
+                        //ON SUCCESS
+                        onSuccess(json)
+                    }else{
+                        print("Request failed: \(json["message"].stringValue)")
+                        onFailure(json["message"].stringValue)
+                    }
+                }else{
+                    print("Failed to return JSON: returned \(response.response)")
+                    onFailure("Failed to return JSON")
+                }
+            }else{
+                print("Request Failed: \(response.result.error)")
+                onFailure("Request Failed: \(response.result.error)")
             }
+            
+            
         }
-
+        
+    }
+    
+    
+    ///On success it should return the Token
+    func register(_ client : UiotClient, onSuccess: @escaping (String)->()){
+        
+        let req = AlamofireRequest(endPoint: apiEndPoint.registerClient, parameters: client.toDictionary)
+        
+        responseJSON(dataRequest: req, onSuccess: {json in
+            print(json)
+        }, onFailure: {_ in
+            print("do something")
+        })
+        
     }
     
     
@@ -48,7 +80,7 @@ class DAO: NSObject {
     
     
     
-
+    
 }
 
 

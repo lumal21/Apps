@@ -13,10 +13,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        DAO("").register(nil)
-//        print("CLIENT")
-//        print( UiotClient(name: "blaName", chipset: "blachipset", mac: "blamac", serial: "blaserial", processor: "blaprocessor", channel: "blachannel", client_time: 999999))
-//        
+       
+        print("CLIENT")
+        let client = UiotClient(name: "blaName", chipset: "blachipset", mac: "blamac", serial: "blaserial", processor: "blaprocessor", channel: "blachannel", client_time: 999999)
+
+        DAO().register(client, onSuccess: { suc in
+            print(suc)
+        })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 //        print("")
 //        print("")
 //        print("SERVICE")
