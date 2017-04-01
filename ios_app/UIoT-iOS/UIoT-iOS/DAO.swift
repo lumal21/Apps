@@ -11,15 +11,17 @@ import Alamofire
 import SwiftyJSON
 
 class DAO: NSObject {
-    fileprivate let host = "https://raise.homol.uiot.org"
+    fileprivate let host = "http://homol.redes.unb.br/uiot-raise/"
+//    "http://homol.redes.unb.br"
+//    "https://raise.homol.uiot.org"
     fileprivate let header = ["Content-Type": "application/json", "Accept" : "application/json"]
     struct apiEndPoint {
-        static let client = "/client/"
-        static let registerClient = "/client/register/"
-        static let service = "/service/"
-        static let registerService = "/service/register/"
-        static let data = "/data/"
-        static let registerData = "/data/register/"
+        static let clientList = "client/list/"
+        static let registerClient = "client/register/"
+        static let serviceList = "service/"
+        static let registerService = "service/register/"
+        static let dataList = "data/"
+        static let registerData = "data/register/"
     }
     
     
@@ -35,30 +37,75 @@ class DAO: NSObject {
 
 //all about GET DATA from server
 //MARK:- GET
-//extension DAO{
-//    //MARK:- GET
-//    
-//    func get(data : UiotData, onSuccess: @escaping (String)->(), onFailure: @escaping (String)->()){
-//        print("Registering DATA")
-//        self.registerAll(data, onSuccess: {json in
-//            onSuccess(json["message"].stringValue)
-//        }, onFailure: {msg in
-//            onFailure(msg)
-//        })
-//    }
-//    
-//}
+extension DAO{
+    //MARK:- GET
+    
+//    client/?NAME=1    &PROCESSOR=1&   CHANNEL=1&  HOST=1& TAG=1
+    ///On success it should have the Token
+    public func getAll(endPoint : String, onSuccess: @escaping (JSON)->(), onFailure: @escaping (String)->()){
+        
+        let req = Alamofire.request(host+endPoint, method: HTTPMethod.get, parameters: nil, encoding: URLEncoding.default, headers: header)
+        
+        responseJSON(dataRequest: req, onSuccess: {json in
+            onSuccess(json)
+        }, onFailure: {msg in
+            onFailure(msg)
+        })
+    }
+ 
+    
+    public func getClient(onSuccess: @escaping ([UiotClient])->(), onFailure: @escaping (String)->()){
+        
+        getAll(endPoint: apiEndPoint.clientList, onSuccess: {json in
+            var all = [UiotClient]()
+            for (_, data) in json["values"]{
+                all.append(UiotClient.init(json: data))
+            }
+        }, onFailure: {msg in
+            print(msg)
+        })
+        
+    }
+    
+    public func getService(onSuccess: @escaping ([UiotService])->(), onFailure: @escaping (String)->()){
+        
+        getAll(endPoint: apiEndPoint.serviceList, onSuccess: {json in
+            var all = [UiotService]()
+            for (_, data) in json["values"]{
+                all.append(UiotService.init(json: data))
+            }
+        }, onFailure: {msg in
+            print(msg)
+        })
+        
+    }
+    
+    public func getData(onSuccess: @escaping ([UiotData])->(), onFailure: @escaping (String)->()){
+        
+        getAll(endPoint: apiEndPoint.dataList, onSuccess: {json in
+            var all = [UiotData]()
+            for (_, data) in json["values"]{
+                all.append(UiotData.init(json: data))
+            }
+        }, onFailure: {msg in
+            print(msg)
+        })
+        
+    }
+    
+}
+
+
 //all about REGISTER into server
 //MARK:- REGISTER
 extension DAO{
     
     //MARK: PRIVATE
-    
-    private func responseJSON(dataRequest : DataRequest, onSuccess: @escaping (JSON)->(), onFailure: @escaping (String)->()){
+    internal func responseJSON(dataRequest : DataRequest, onSuccess: @escaping (JSON)->(), onFailure: @escaping (String)->()){
         
         dataRequest.responseJSON{ response in
-            print("Request sent to: \(response.request)")
-            //            print("Response: \(response.response)")
+            print("Request sent to: \(String(describing: response.request))")
+            print("Complete Response: \(String(describing: response.response))")
             
             if response.result.isSuccess  {
                 if let json = response.result.value as? JSON {
@@ -67,18 +114,17 @@ extension DAO{
                         //ON SUCCESS
                         onSuccess(json)
                     }else{
-                        print("Request failed: \(json["message"].stringValue)")
+                        print("Request failed for reason: \(json["message"].stringValue)")
                         onFailure(json["message"].stringValue)
                     }
                 }else{
-                    print("Failed to return JSON: returned \(response.response)")
+                    print("Failed, DID NOT RETURN JSON, but the response was: \(String(describing: response.result.value))")
                     onFailure("Failed to return JSON")
                 }
             }else{
-                print("Request Failed: \(response.result.error)")
-                onFailure("Request Failed: \(response.result.error)")
+                print("Request Failed: \(String(describing: response.result.error))")
+                onFailure("Request Failed: \(String(describing: response.result.error))")
             }
-            
             
         }
         
@@ -87,7 +133,6 @@ extension DAO{
     ///On success it should have the Token
     private func registerAll(_ object : CustomDictionaryConvertible, endPoint : String, onSuccess: @escaping (JSON)->(), onFailure: @escaping (String)->()){
         let req = Alamofire.request(host+endPoint, method: HTTPMethod.post, parameters: object.toDictionary, encoding: URLEncoding.default, headers: header)
-            //AlamofireRequest(endPoint: apiEndPoint.registerClient, parameters: object.toDictionary)
         
         responseJSON(dataRequest: req, onSuccess: {json in
             onSuccess(json)

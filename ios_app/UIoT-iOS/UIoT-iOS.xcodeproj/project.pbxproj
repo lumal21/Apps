@@ -167,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				8659CED01E6F9990006867E7 /* DAO.swift */,
+				8659CEDE1E7234EC006867E7 /* Protocols */,
 				8659CECB1E6F3C57006867E7 /* UIOT */,
 			);
 			name = Model;
@@ -178,9 +179,16 @@
 				8659CEC81E6F3C36006867E7 /* UiotClient.swift */,
 				8659CECC1E6F4209006867E7 /* UiotService.swift */,
 				8659CECE1E6F4B13006867E7 /* UiotData.swift */,
-				8659CEDC1E71E85A006867E7 /* CustomDictionaryConvertible.swift */,
 			);
 			name = UIOT;
+			sourceTree = "<group>";
+		};
+		8659CEDE1E7234EC006867E7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8659CEDC1E71E85A006867E7 /* CustomDictionaryConvertible.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		FDD692EFEDA54938FE2B0BA5 /* Pods */ = {

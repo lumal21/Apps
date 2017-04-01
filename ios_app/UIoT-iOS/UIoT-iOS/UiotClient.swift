@@ -21,6 +21,9 @@ import SwiftyJSON
  "client_time": 1317427200,
  "server_time": 1317987654
  }
+ 
+ GET
+ //client/?NAME=1    &PROCESSOR=1&   CHANNEL=1&  HOST=1& TAG=1
  */
 
 class UiotClient: NSObject, CustomDictionaryConvertible {

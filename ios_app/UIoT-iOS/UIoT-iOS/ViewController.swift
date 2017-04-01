@@ -14,12 +14,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        
-        print("CLIENT")
-        let client = UiotClient(name: "blaName", chipset: "blachipset", mac: "blamac", serial: "blaserial", processor: "blaprocessor", channel: "blachannel", client_time: 999999)
+//        print("CLIENT")
+//        let client = UiotClient(name: "blaName", chipset: "blachipset", mac: "blamac", serial: "blaserial", processor: "blaprocessor", channel: "blachannel", client_time: 999999)
+//
+//        DAO().register(client: client, onSuccess: {_ in}, onFailure: {_ in})
 
-        DAO().register(client: client, onSuccess: {_ in}, onFailure: {_ in})
-        
-        
+//        var bla = [UiotClient]()
+        DAO().getClient(onSuccess: {all in
+//            bla = all
+            print(all)
+        }, onFailure: {msg in
+            print(msg)
+        })
         
         
         
