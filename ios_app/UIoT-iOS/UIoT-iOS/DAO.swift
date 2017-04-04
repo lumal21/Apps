@@ -11,7 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class DAO: NSObject {
-    fileprivate let host = "http://homol.redes.unb.br/uiot-raise/"
+    fileprivate let host = "http://raise.devel.uiot.org"
+//    "http://homol.redes.unb.br/uiot-raise/"
 //    "http://homol.redes.unb.br"
 //    "https://raise.homol.uiot.org"
     fileprivate let header = ["Content-Type": "application/json", "Accept" : "application/json"]
