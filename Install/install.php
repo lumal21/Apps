@@ -18,15 +18,19 @@
  * This script will install all the required couchbase buckets that RAISe needs to work properly.
  * IMPORTANT: this requires the cURL extension to work.
  */
-//include "metadados.php";
+
+include_once ("config.php");
+
 class Install
 {
-    private $username = "iury_adm"; //your couchbase username
-    private $password = "123456"; // your couchbase password
+    private $username = DB_USER; //your couchbase username
+    private $password = DB_PASSWORD; // your couchbase password
+    
     private function getCredentials()
     {
         return $this->username.":".$this->password;
     }
+    
     private $postfields = array(
         'authType' => 'sasl',
         'bucketType' => 'membase',
@@ -37,6 +41,7 @@ class Install
         'replicaNumber' => 1,
         'threadsNumber' => 3
     );
+    
     private $buckets = array(
         'metadata' => 0,
         'client' => 0,
@@ -47,19 +52,23 @@ class Install
         'user'  => 0,
         'log'  => 0
     );
+    
     private function setFields($name, $quota)
     {
         $this->postfields['name'] = $name;
         $this->postfields['ramQuotaMB'] = $quota;
     }
+    
     private function getFields()
     {
         return $this->postfields;
     }
+    
     private function getBuckets()
     {
         return $this->buckets;
     }
+    
     private function setBuckets($memory)
     {
         $buckets = $this->getBuckets();
@@ -73,6 +82,7 @@ class Install
         $buckets['log'] = floor((($memory / 100) * 14));
         $this->buckets = $buckets;
     }
+
     private function getBucketsInfo()
     {
       $ch = curl_init();
@@ -85,6 +95,7 @@ class Install
       curl_close($ch);
       return JSON_decode($server_output);
     }
+
     public function getServerInfo()
     {
         $ch = curl_init();
@@ -98,6 +109,7 @@ class Install
         $this->setBuckets(JSON_decode($server_output)->memoryQuota);
         $this->createBuckets();
     }
+
     private function createBuckets()
     {
         $buckets = $this->getBuckets();
@@ -106,8 +118,10 @@ class Install
             $this->setFields($key, $bucket);
             $this->createBucket($this->getFields());
         }
+
         $this->fillBuckets();
     }
+
     private function fillBuckets()
     {
       $readyToFill = false;
@@ -117,16 +131,21 @@ class Install
         $bucketsInfo = $this->getBucketsInfo();
         foreach($bucketsInfo as $key=>$info)
         {
-          $status[] = $info->nodes[0]->status;
+          @$status[] = $info->nodes[0]->status;
         }
+
         if (count(array_unique($status)) === 1 && end($status) === 'healthy')
         {
           $readyToFill = true;
         }
+
       }
+
       //From this point on, buckets are ready to be filled, so we are including the second part of the script
-      include "bucktKey.php";
+      include "bucketKey.php";
+
     }
+
     private function createBucket($postfields)
     {
         $ch = curl_init();
@@ -141,5 +160,6 @@ class Install
         curl_close($ch);
     }
 }
+
 $install = new Install;
 $install->getServerInfo();
